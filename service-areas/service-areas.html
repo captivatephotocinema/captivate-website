@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Areas – Captivate Photo+Cinema | Photographers, Videographers St. Catharines</title>
+  <meta name="description" content="Captivate Photo+Cinema serves St. Catharines, Niagara Falls, Hamilton, Toronto, and all of Southern Ontario with professional photo and video production." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .areas-hero { padding: 4rem 3rem 3rem; border-bottom: 0.5px solid var(--light-border); }
+    .areas-hero h1 { font-size: clamp(36px, 4.5vw, 54px); line-height: 1.05; margin-bottom: 0.75rem; }
+    .areas-hero p { font-size: 14px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; max-width: 620px; line-height: 1.75; }
+
+    /* REGION SECTIONS */
+    .region { border-bottom: 0.5px solid var(--light-border); }
+    .region-header { padding: 2rem 3rem 1.25rem; background: var(--off-white); border-bottom: 0.5px solid var(--light-border); }
+    .region-header h2 { font-size: 20px; letter-spacing: 0.06em; }
+    .region-header p { font-size: 12px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-top: 0.35rem; }
+
+    .area-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .area-item { border-right: 0.5px solid var(--light-border); border-bottom: 0.5px solid var(--light-border); }
+    .area-item a { display: block; padding: 1.5rem 2rem; text-decoration: none; transition: background 0.2s; }
+    .area-item a:hover { background: var(--off-white); }
+    .area-item h3 { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-primary); margin-bottom: 0.3rem; }
+    .area-item p { font-size: 11px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.5; }
+    .area-arrow { font-size: 11px; color: var(--text-secondary); margin-top: 0.75rem; display: block; letter-spacing: 0.1em; font-family: 'Montserrat', sans-serif; }
+
+    /* SERVICES OFFERED */
+    .services-section { padding: 3rem 3rem; border-bottom: 0.5px solid var(--light-border); }
+    .services-section h2 { font-size: 24px; margin-bottom: 1.75rem; }
+    .svc-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--light-border); border: 0.5px solid var(--light-border); }
+    .svc-item { background: var(--white); padding: 1.75rem 1.5rem; }
+    .svc-item h3 { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+    .svc-item p { font-size: 12px; color: var(--text-secondary); line-height: 1.65; font-family: 'Montserrat', sans-serif; margin-bottom: 1rem; }
+    .svc-item a { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-primary); text-decoration: none; border-bottom: 0.5px solid #aaa; padding-bottom: 2px; font-family: 'Montserrat', sans-serif; }
+
+    .areas-cta { padding: 4rem 3rem; text-align: center; background: var(--off-white); }
+    .areas-cta h2 { font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .areas-cta p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .areas-hero { padding: 3rem 1.5rem 2.5rem; }
+      .region-header { padding: 1.5rem 1.5rem 1rem; }
+      .area-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-section { padding: 2.5rem 1.5rem; }
+      .svc-list { grid-template-columns: repeat(2, 1fr); }
+      .areas-cta { padding: 3rem 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      .area-grid { grid-template-columns: 1fr 1fr; }
+      .svc-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Captivate<span>Photo + Cinema</span></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="#">Services</a>
+      <ul class="dropdown">
+        <li><a href="services-commercial.html">Commercial</a></li>
+        <li><a href="services-corporate.html">Corporate</a></li>
+        <li><a href="services-wedding.html">Wedding</a></li>
+        <li><a href="services-drone.html">Drone &amp; Aerial</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="service-areas.html">Service Areas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Inquire Now</a>
+</nav>
+
+<section class="areas-hero">
+  <p class="section-eyebrow">Where we work</p>
+  <h1>Service Areas</h1>
+  <p>Captivate Photo+Cinema is an end-to-end photo and video production company serving Southern Ontario. We specialize in conceiving original ideas, capturing beautiful imagery, and creating an enduring product for you and your audience.</p>
+</section>
+
+<!-- NIAGARA REGION -->
+<div class="region">
+  <div class="region-header">
+    <h2>Niagara Region</h2>
+    <p>Our home base — proudly rooted in St. Catharines with deep ties across the entire Niagara Peninsula.</p>
+  </div>
+  <div class="area-grid">
+    <div class="area-item"><a href="service-areas/st-catharines.html"><h3>St. Catharines</h3><p>Photographers &amp; Videographers in St. Catharines, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/niagara-falls.html"><h3>Niagara Falls</h3><p>Photographers &amp; Videographers in Niagara Falls, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/niagara-on-the-lake.html"><h3>Niagara-on-the-Lake</h3><p>Photographers &amp; Videographers in NOTL, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/welland.html"><h3>Welland</h3><p>Photographers &amp; Videographers in Welland, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/thorold.html"><h3>Thorold</h3><p>Photographers &amp; Videographers in Thorold, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/port-colborne.html"><h3>Port Colborne</h3><p>Photographers &amp; Videographers in Port Colborne, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/pelham.html"><h3>Pelham</h3><p>Photographers &amp; Videographers in Pelham, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/lincoln.html"><h3>Lincoln</h3><p>Photographers &amp; Videographers in Lincoln, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/west-lincoln.html"><h3>West Lincoln</h3><p>Photographers &amp; Videographers in West Lincoln, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/grimsby.html"><h3>Grimsby</h3><p>Photographers &amp; Videographers in Grimsby, ON</p><span class="area-arrow">View →</span></a></div>
+  </div>
+</div>
+
+<!-- HAMILTON / HALTON -->
+<div class="region">
+  <div class="region-header">
+    <h2>Hamilton &amp; Halton</h2>
+    <p>Serving the greater Hamilton area, Stoney Creek, Ancaster, and across the Halton Region.</p>
+  </div>
+  <div class="area-grid">
+    <div class="area-item"><a href="service-areas/stoney-creek.html"><h3>Stoney Creek</h3><p>Photographers &amp; Videographers in Stoney Creek, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/hamilton.html"><h3>Hamilton</h3><p>Photographers &amp; Videographers in Hamilton, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/ancaster.html"><h3>Ancaster</h3><p>Photographers &amp; Videographers in Ancaster, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/burlington.html"><h3>Burlington</h3><p>Photographers &amp; Videographers in Burlington, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/oakville.html"><h3>Oakville</h3><p>Photographers &amp; Videographers in Oakville, ON</p><span class="area-arrow">View →</span></a></div>
+  </div>
+</div>
+
+<!-- GTA -->
+<div class="region">
+  <div class="region-header">
+    <h2>Greater Toronto Area</h2>
+    <p>Corporate, commercial, and event production across the GTA and surrounding municipalities.</p>
+  </div>
+  <div class="area-grid">
+    <div class="area-item"><a href="service-areas/mississauga.html"><h3>Mississauga</h3><p>Photographers &amp; Videographers in Mississauga, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/toronto.html"><h3>Toronto</h3><p>Photographers &amp; Videographers in Toronto, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/brampton.html"><h3>Brampton</h3><p>Photographers &amp; Videographers in Brampton, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/vaughan.html"><h3>Vaughan</h3><p>Photographers &amp; Videographers in Vaughan, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/newmarket.html"><h3>Newmarket</h3><p>Photographers &amp; Videographers in Newmarket, ON</p><span class="area-arrow">View →</span></a></div>
+    <div class="area-item"><a href="service-areas/gta.html"><h3>GTA</h3><p>Photographers &amp; Videographers across the GTA</p><span class="area-arrow">View →</span></a></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <p class="section-eyebrow">Services offered by Captivate Photo+Cinema</p>
+  <h2>What We Do</h2>
+  <div class="svc-list">
+    <div class="svc-item">
+      <h3>Commercial Video</h3>
+      <p>Brand films and product visuals that move audiences across all of Southern Ontario.</p>
+      <a href="services-commercial.html">Discover →</a>
+    </div>
+    <div class="svc-item">
+      <h3>Corporate Video</h3>
+      <p>Training content, company profiles, and event coverage produced to a professional standard.</p>
+      <a href="services-corporate.html">Discover →</a>
+    </div>
+    <div class="svc-item">
+      <h3>Wedding Photo &amp; Video</h3>
+      <p>Cinematic films and timeless photography for couples across Niagara, Hamilton, and the GTA.</p>
+      <a href="services-wedding.html">Discover →</a>
+    </div>
+    <div class="svc-item">
+      <h3>Drone &amp; Aerial</h3>
+      <p>Licensed aerial cinematography delivering stunning perspective for any project or location.</p>
+      <a href="services-drone.html">Discover →</a>
+    </div>
+  </div>
+</section>
+
+<section class="areas-cta">
+  <p class="section-eyebrow">Based in St. Catharines — we come to you</p>
+  <h2>Let's work together.</h2>
+  <p>Tell us about your project and where you're located — we'll take it from there.</p>
+  <a href="contact.html" class="btn-dark">Start Your Inquiry</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <a href="index.html" class="footer-logo">Captivate Photo + Cinema</a>
+    <div class="footer-badges">
+      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener"><span class="stars">★★★★★</span><span>Google Reviews</span></a>
+      <a class="badge" href="https://www.ccaward.com/award-winners/niagara-region/best-video-production-company/captivate-photocinema/" target="_blank" rel="noopener">Consumer Choice Award</a>
+      <a class="badge" href="https://threebestrated.ca/wedding-photographers-in-st-catharines-on" target="_blank" rel="noopener">Three Best Rated 2026</a>
+    </div>
+  </div>
+  <div class="footer-areas">Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA</div>
+  <div class="footer-bottom">
+    <span>St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
+    <span>© 2026 Captivate Photo + Cinema. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

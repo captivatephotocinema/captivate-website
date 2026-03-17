@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Captivate Photo+Cinema | Photographers & Videographers – St. Catharines, Niagara, GTA</title>
+  <meta name="description" content="Award-winning photo and video production serving St. Catharines, Niagara Region, Hamilton, and the GTA. Wedding, commercial, corporate, and drone services." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero { position: relative; background: #080808; overflow: hidden; }
+    .video-wrap { position: relative; width: 100%; padding-top: 56.25%; }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%); pointer-events: none; }
+    .hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 0 3rem 3rem; animation: fadeUp 1s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.85rem; font-family: 'Montserrat', sans-serif; }
+    .hero-h1 { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: clamp(40px, 5.5vw, 68px); line-height: 1.0; color: #fff; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .hero-h1 em { font-style: italic; font-weight: 300; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-hero-w { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; background: #fff; color: #0a0a0a; border: none; padding: 13px 28px; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+    .btn-hero-w:hover { opacity: 0.85; }
+    .btn-hero-g { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; background: transparent; color: rgba(255,255,255,0.75); border: 0.5px solid rgba(255,255,255,0.35); padding: 13px 28px; cursor: pointer; font-weight: 300; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+    .btn-hero-g:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+    /* CONTACT MODAL */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: #fff; width: 100%; max-width: 540px; padding: 3rem; position: relative; animation: fadeUp 0.3s ease both; max-height: 90vh; overflow-y: auto; }
+    .modal-close { position: absolute; top: 1.25rem; right: 1.5rem; background: none; border: none; font-size: 22px; cursor: pointer; color: #888; line-height: 1; }
+    .modal-close:hover { color: #000; }
+    .modal-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: #777; margin-bottom: 0.75rem; font-family: 'Montserrat', sans-serif; }
+    .modal h2 { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.75rem; color: #0a0a0a; }
+    .form-row { margin-bottom: 1.1rem; }
+    .form-row label { display: block; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #777; margin-bottom: 0.4rem; font-family: 'Montserrat', sans-serif; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; border: 0.5px solid #ccc; padding: 11px 14px; font-family: 'Montserrat', sans-serif; font-size: 13px; color: #0a0a0a; background: #fff; outline: none; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; border-radius: 0; }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: #0a0a0a; }
+    .form-row textarea { resize: vertical; min-height: 110px; }
+    .form-row select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23666' d='M5 6L0 0h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+    .form-submit { width: 100%; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; background: #0a0a0a; color: #fff; border: none; padding: 14px; cursor: pointer; font-weight: 400; margin-top: 0.5rem; transition: opacity 0.2s; }
+    .form-submit:hover { opacity: 0.78; }
+    .form-note { font-size: 11px; color: #999; margin-top: 0.75rem; text-align: center; font-family: 'Montserrat', sans-serif; }
+    .form-success { display: none; text-align: center; padding: 2.5rem 0; }
+    .form-success h3 { font-family: 'Oswald', sans-serif; font-size: 26px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.85rem; }
+    .form-success p { font-size: 13px; color: #777; font-family: 'Montserrat', sans-serif; line-height: 1.75; }
+
+    /* SERVICES */
+    .services { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.5px solid var(--light-border); }
+    .svc-card { padding: 2.75rem 2rem; border-right: 0.5px solid var(--light-border); transition: background 0.2s; }
+    .svc-card:last-child { border-right: none; }
+    .svc-card:hover { background: var(--off-white); }
+    .svc-title { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 22px; line-height: 1.15; margin-bottom: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .svc-tag { font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.5rem; font-family: 'Montserrat', sans-serif; }
+    .svc-link { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-primary); text-decoration: none; border-bottom: 0.5px solid #aaa; padding-bottom: 2px; display: inline-block; transition: border-color 0.2s; }
+    .svc-link:hover { border-color: var(--text-primary); }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 0.5px solid var(--light-border); border-bottom: 0.5px solid var(--light-border); background: var(--off-white); }
+    .stat { padding: 2.25rem 2rem; border-right: 0.5px solid var(--light-border); text-align: center; }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 48px; line-height: 1; margin-bottom: 0.4rem; }
+    .stat-lbl { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; }
+
+    /* SERVICE AREAS */
+    .areas { padding: 2.75rem 3rem; border-bottom: 0.5px solid var(--light-border); text-align: center; }
+    .areas-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1.1rem; font-family: 'Montserrat', sans-serif; }
+    .areas-list { font-size: 12px; color: var(--text-secondary); line-height: 2.2; letter-spacing: 0.05em; font-family: 'Montserrat', sans-serif; }
+    .areas-list a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .areas-list a:hover { color: var(--text-primary); }
+    .areas-sep { margin: 0 0.4rem; opacity: 0.35; }
+
+    /* CTA */
+    .cta-section { padding: 5rem 3rem; text-align: center; background: var(--off-white); }
+    .cta-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; }
+    .cta-h2 { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 42px; line-height: 1.1; margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .cta-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 2.25rem; line-height: 1.75; font-family: 'Montserrat', sans-serif; }
+
+    @media (max-width: 900px) {
+      .hero-content { padding: 0 1.5rem 2rem; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .svc-card:nth-child(2) { border-right: none; }
+      .svc-card:nth-child(3), .svc-card:nth-child(4) { border-top: 0.5px solid var(--light-border); }
+      .svc-card:nth-child(3) { border-right: 0.5px solid var(--light-border); }
+      .areas { padding: 2rem 1.5rem; }
+      .cta-section { padding: 3.5rem 1.5rem; }
+      .modal { padding: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .services { grid-template-columns: 1fr; }
+      .svc-card { border-right: none !important; border-top: 0.5px solid var(--light-border) !important; }
+      .svc-card:first-child { border-top: none !important; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 0.5px solid var(--light-border); }
+      .hero-btns { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Captivate<span>Photo + Cinema</span></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="#">Services</a>
+      <ul class="dropdown">
+        <li><a href="services-commercial.html">Commercial</a></li>
+        <li><a href="services-corporate.html">Corporate</a></li>
+        <li><a href="services-wedding.html">Wedding</a></li>
+        <li><a href="services-drone.html">Drone &amp; Aerial</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="service-areas.html">Service Areas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Inquire Now</a>
+</nav>
+
+<section class="hero">
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/oAhwSoW-keg?autoplay=1&mute=1&loop=1&playlist=oAhwSoW-keg&controls=0&showinfo=0&rel=0&modestbranding=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">St. Catharines &nbsp;·&nbsp; Niagara Region &nbsp;·&nbsp; Hamilton &nbsp;·&nbsp; GTA</p>
+    <h1 class="hero-h1">Every frame<br>tells <em>your</em> story.</h1>
+    <div class="hero-btns">
+      <a href="portfolio.html" class="btn-hero-w">View Our Work</a>
+      <button class="btn-hero-g" onclick="document.getElementById('contactModal').classList.add('open')">Get In Touch</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">✕</button>
+    <div id="formContent">
+      <p class="modal-eyebrow">Let's work together</p>
+      <h2>Get In Touch</h2>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-row">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="(289) 555-0100" />
+        </div>
+        <div class="form-row">
+          <label for="service">What are you looking for?</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="Commercial Video Production">Commercial Video Production</option>
+            <option value="Corporate Video">Corporate Video</option>
+            <option value="Wedding Photo & Video">Wedding Photo &amp; Video</option>
+            <option value="Drone & Aerial">Drone &amp; Aerial</option>
+            <option value="Not sure yet">Not sure yet — let's talk</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="Event date, location, goals, budget range..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Your Inquiry</button>
+        <p class="form-note">We typically respond within one business day.</p>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message Received</h3>
+      <p>Thanks for reaching out.<br>We'll be in touch within one business day.</p>
+    </div>
+  </div>
+</div>
+
+<section class="services">
+  <div class="svc-card">
+    <h2 class="svc-title">Commercial<br>Video Production</h2>
+    <p class="svc-tag">Brand films and product visuals that move audiences and drive results.</p>
+    <a href="services-commercial.html" class="svc-link">Discover</a>
+  </div>
+  <div class="svc-card">
+    <h2 class="svc-title">Corporate<br>Video</h2>
+    <p class="svc-tag">Training, events, and company content — produced with precision.</p>
+    <a href="services-corporate.html" class="svc-link">Discover</a>
+  </div>
+  <div class="svc-card">
+    <h2 class="svc-title">Wedding Photo<br>&amp; Video</h2>
+    <p class="svc-tag">Cinematic films and timeless photography for your most important day.</p>
+    <a href="services-wedding.html" class="svc-link">Discover</a>
+  </div>
+  <div class="svc-card">
+    <h2 class="svc-title">Drone &amp;<br>Aerial</h2>
+    <p class="svc-tag">Licensed aerial cinematography for stunning perspective and scale.</p>
+    <a href="services-drone.html" class="svc-link">Discover</a>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-num">20+</div>
+    <div class="stat-lbl">Years in production</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">200+</div>
+    <div class="stat-lbl">Weddings captured</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">5★</div>
+    <div class="stat-lbl">Google rating</div>
+  </div>
+</section>
+
+<section class="areas">
+  <p class="areas-eyebrow">Proudly Serving Southern Ontario</p>
+  <p class="areas-list">
+    <a href="service-areas/st-catharines.html">St. Catharines</a><span class="areas-sep">·</span>
+    <a href="service-areas/niagara-falls.html">Niagara Falls</a><span class="areas-sep">·</span>
+    <a href="service-areas/niagara-on-the-lake.html">Niagara-on-the-Lake</a><span class="areas-sep">·</span>
+    <a href="service-areas/welland.html">Welland</a><span class="areas-sep">·</span>
+    <a href="service-areas/thorold.html">Thorold</a><span class="areas-sep">·</span>
+    <a href="service-areas/port-colborne.html">Port Colborne</a><span class="areas-sep">·</span>
+    <a href="service-areas/pelham.html">Pelham</a><span class="areas-sep">·</span>
+    <a href="service-areas/lincoln.html">Lincoln</a><span class="areas-sep">·</span>
+    <a href="service-areas/west-lincoln.html">West Lincoln</a><span class="areas-sep">·</span>
+    <a href="service-areas/grimsby.html">Grimsby</a><span class="areas-sep">·</span>
+    <a href="service-areas/stoney-creek.html">Stoney Creek</a><br>
+    <a href="service-areas/hamilton.html">Hamilton</a><span class="areas-sep">·</span>
+    <a href="service-areas/ancaster.html">Ancaster</a><span class="areas-sep">·</span>
+    <a href="service-areas/burlington.html">Burlington</a><span class="areas-sep">·</span>
+    <a href="service-areas/oakville.html">Oakville</a><span class="areas-sep">·</span>
+    <a href="service-areas/mississauga.html">Mississauga</a><span class="areas-sep">·</span>
+    <a href="service-areas/toronto.html">Toronto</a><span class="areas-sep">·</span>
+    <a href="service-areas/brampton.html">Brampton</a><span class="areas-sep">·</span>
+    <a href="service-areas/vaughan.html">Vaughan</a><span class="areas-sep">·</span>
+    <a href="service-areas/newmarket.html">Newmarket</a><span class="areas-sep">·</span>
+    <a href="service-areas/gta.html">GTA</a>
+  </p>
+</section>
+
+<section class="cta-section">
+  <p class="cta-eyebrow">Let's work together</p>
+  <h2 class="cta-h2">Ready to create something lasting?</h2>
+  <p class="cta-sub">Reach out to start the conversation. We'd love to hear what you have in mind.</p>
+  <button class="btn-dark" onclick="document.getElementById('contactModal').classList.add('open')">Start Your Inquiry</button>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <a href="index.html" class="footer-logo">Captivate Photo + Cinema</a>
+    <div class="footer-badges">
+      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener">
+        <span class="stars">★★★★★</span><span>Google Reviews</span>
+      </a>
+      <a class="badge" href="https://www.ccaward.com/award-winners/niagara-region/best-video-production-company/captivate-photocinema/" target="_blank" rel="noopener">Consumer Choice Award</a>
+      <a class="badge" href="https://threebestrated.ca/wedding-photographers-in-st-catharines-on" target="_blank" rel="noopener">Three Best Rated 2026</a>
+    </div>
+  </div>
+  <div class="footer-areas">
+    Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA
+  </div>
+  <div class="footer-bottom">
+    <span>St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
+    <span>© 2026 Captivate Photo + Cinema. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(() => showSuccess())
+    .catch(() => showSuccess()); // show success even on local test
+
+    function showSuccess() {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('contactModal').classList.remove('open');
+  });
+</script>
+
+</body>
+</html>

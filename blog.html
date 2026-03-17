@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | St. Catharines Video Production Company – Captivate Photo+Cinema</title>
+  <meta name="description" content="Tips, insights, and behind-the-scenes content from Captivate Photo+Cinema — St. Catharines video production company serving Niagara, Hamilton, and the GTA." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .blog-hero { padding: 4rem 3rem 3rem; border-bottom: 0.5px solid var(--light-border); }
+    .blog-hero h1 { font-size: clamp(36px, 4.5vw, 54px); line-height: 1.05; margin-bottom: 0.6rem; }
+    .blog-hero p { font-size: 14px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; max-width: 560px; line-height: 1.7; }
+
+    /* FILTER */
+    .filter-bar { display: flex; border-bottom: 0.5px solid var(--light-border); overflow-x: auto; }
+    .filter-btn { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; background: transparent; border: none; border-right: 0.5px solid var(--light-border); padding: 1rem 1.5rem; cursor: pointer; color: var(--text-secondary); white-space: nowrap; transition: background 0.2s, color 0.2s; }
+    .filter-btn:hover { background: var(--off-white); color: var(--text-primary); }
+    .filter-btn.active { background: var(--black); color: var(--white); }
+
+    /* BLOG GRID */
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-border); border-top: 0.5px solid var(--light-border); }
+    .blog-card { background: var(--white); text-decoration: none; color: inherit; display: block; transition: background 0.2s; }
+    .blog-card:hover { background: var(--off-white); }
+    .blog-card.hidden { display: none; }
+    .blog-card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--off-white); }
+    .blog-card-img-ph { width: 100%; aspect-ratio: 16/9; background: var(--off-white); display: flex; align-items: center; justify-content: center; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; }
+    .blog-card-body { padding: 1.5rem 1.75rem 2rem; }
+    .blog-card-meta { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.65rem; }
+    .blog-card-cat { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; }
+    .blog-card-date { font-size: 9px; letter-spacing: 0.1em; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; opacity: 0.6; }
+    .blog-card-title { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 0.65rem; color: var(--text-primary); }
+    .blog-card-excerpt { font-size: 12px; color: var(--text-secondary); line-height: 1.7; font-family: 'Montserrat', sans-serif; }
+    .blog-card-read { display: inline-block; margin-top: 1rem; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-primary); font-family: 'Montserrat', sans-serif; border-bottom: 0.5px solid #aaa; padding-bottom: 2px; }
+
+    /* NOTE BANNER */
+    .blog-note { padding: 1rem 3rem; background: #faf9f7; border-bottom: 0.5px solid var(--light-border); font-size: 12px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; display: flex; align-items: center; gap: 0.75rem; }
+    .blog-note strong { color: var(--text-primary); }
+
+    .blog-cta { padding: 4rem 3rem; text-align: center; background: var(--off-white); border-top: 0.5px solid var(--light-border); }
+    .blog-cta h2 { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .blog-cta p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; line-height: 1.7; }
+
+    @media (max-width: 900px) { .blog-hero { padding: 3rem 1.5rem 2.5rem; } .blog-note { padding: 1rem 1.5rem; } .blog-grid { grid-template-columns: repeat(2, 1fr); } .blog-cta { padding: 3rem 1.5rem; } }
+    @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Captivate<span>Photo + Cinema</span></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="#">Services</a>
+      <ul class="dropdown">
+        <li><a href="services-commercial.html">Commercial</a></li>
+        <li><a href="services-corporate.html">Corporate</a></li>
+        <li><a href="services-wedding.html">Wedding</a></li>
+        <li><a href="services-drone.html">Drone &amp; Aerial</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="service-areas.html">Service Areas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Inquire Now</a>
+</nav>
+
+<section class="blog-hero">
+  <p class="section-eyebrow">Insights &amp; Behind the Scenes</p>
+  <h1>St. Catharines Video Production Company Blog</h1>
+  <p>Tips, stories, and project spotlights from Captivate Photo+Cinema — serving Niagara, Hamilton, and the GTA.</p>
+</section>
+
+<!--
+  NOTE FOR MIGRATION: During the transition, blog post links point to your
+  existing Webware pages. Once individual blog HTML files are built and live,
+  update each href below to point to the new local file path.
+  e.g. href="blogs/st-catharines-video-production-company-blog/discover-west-lincoln.html"
+-->
+<div class="blog-note">
+  <strong>Note:</strong> During site migration, blog posts currently link to the existing site. New blog pages will be migrated shortly.
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterBlog('all',this)">All Posts</button>
+  <button class="filter-btn" onclick="filterBlog('commercial',this)">Commercial</button>
+  <button class="filter-btn" onclick="filterBlog('corporate',this)">Corporate</button>
+  <button class="filter-btn" onclick="filterBlog('wedding',this)">Wedding</button>
+  <button class="filter-btn" onclick="filterBlog('tips',this)">Tips &amp; Advice</button>
+</div>
+
+<section class="blog-grid">
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1467387-south-niagara-hospital-milestone"
+    target="_blank" class="blog-card" data-cat="corporate">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Corporate Videography</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">South Niagara Hospital – Milestone</h2>
+      <p class="blog-card-excerpt">A milestone corporate production documenting the South Niagara Hospital project — one of the most significant healthcare developments in the region.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1466018-third-carbon-monoxide-mini-psa-the-silent-killer"
+    target="_blank" class="blog-card" data-cat="commercial">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Commercial Production</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">Third Carbon Monoxide Mini PSA – The Silent Killer</h2>
+      <p class="blog-card-excerpt">The third instalment in our Carbon Monoxide awareness PSA series — a compelling public safety campaign produced for Ontario audiences.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1464672-how-to-choose-a-videographer-who-matches-your-wedding-vision"
+    target="_blank" class="blog-card" data-cat="tips">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Wedding Advice</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">How to Choose a Videographer Who Matches Your Wedding Vision</h2>
+      <p class="blog-card-excerpt">Not all videographers are the same. Here's what to look for when choosing the right one for your wedding day in Niagara or the GTA.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1461413-second-carbon-monoxide-mini-psa"
+    target="_blank" class="blog-card" data-cat="commercial">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Commercial Production</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">Second Carbon Monoxide Mini PSA</h2>
+      <p class="blog-card-excerpt">The second instalment in our ongoing Carbon Monoxide awareness series — continuing our work with Ontario public safety messaging.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1458806-new-carbon-monoxide-rules-for-ontario-mini-psa"
+    target="_blank" class="blog-card" data-cat="commercial">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Commercial Production</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">New Carbon Monoxide Rules for Ontario – Mini PSA</h2>
+      <p class="blog-card-excerpt">Captivate produced a mini PSA responding to Ontario's new carbon monoxide legislation — fast turnaround, high impact public awareness content.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1457937-captivate-wins-consumer-choice-awards-for-3rd-year-in-a-row"
+    target="_blank" class="blog-card" data-cat="commercial">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Company News</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">Captivate Wins Consumer Choice Awards for 3rd Year in a Row</h2>
+      <p class="blog-card-excerpt">We are proud to have been recognized as the best video production company in Niagara for the third consecutive year. Thank you to our incredible clients.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1451962-5-costly-mistakes-to-avoid-when-hiring-a-wedding-videographer"
+    target="_blank" class="blog-card" data-cat="tips">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Wedding Advice</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">5 Costly Mistakes to Avoid When Hiring a Wedding Videographer</h2>
+      <p class="blog-card-excerpt">Couples often overlook these critical details when booking a videographer. Here's what to watch for to protect your investment and your memories.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1451893-private-markets-forum-institutional-connect"
+    target="_blank" class="blog-card" data-cat="corporate">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Corporate Videography</span>
+        <span class="blog-card-date">2025</span>
+      </div>
+      <h2 class="blog-card-title">Private Markets Forum – Institutional Connect</h2>
+      <p class="blog-card-excerpt">Captivate covered the Private Markets Forum in Toronto — a high-profile institutional investment event requiring professional multi-camera production.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1440302-how-to-plan-a-stress-free-wedding-photoshoot-expert-tips-inside"
+    target="_blank" class="blog-card" data-cat="tips">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Wedding Advice</span>
+        <span class="blog-card-date">2024</span>
+      </div>
+      <h2 class="blog-card-title">How to Plan a Stress-Free Wedding Photoshoot: Expert Tips Inside</h2>
+      <p class="blog-card-excerpt">Planning your wedding photoshoot doesn't have to be stressful. Our team shares the insider tips that make the difference on your wedding day.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1427655-how-to-choose-the-right-photographer-for-your-corporate-event"
+    target="_blank" class="blog-card" data-cat="tips">
+    <div class="blog-card-img-ph">Add thumbnail</div>
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Corporate Advice</span>
+        <span class="blog-card-date">2024</span>
+      </div>
+      <h2 class="blog-card-title">How to Choose the Right Photographer for Your Corporate Event</h2>
+      <p class="blog-card-excerpt">Corporate events require a different skill set than weddings. Here's what decision-makers should look for when hiring a corporate event photographer.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+  <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1395657-discover-west-lincoln"
+    target="_blank" class="blog-card" data-cat="commercial">
+    <img class="blog-card-img" src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/1000x0/3525150_1000x0.jpg" alt="Discover West Lincoln – Captivate Photo+Cinema" />
+    <div class="blog-card-body">
+      <div class="blog-card-meta">
+        <span class="blog-card-cat">Commercial Production</span>
+        <span class="blog-card-date">Sep 2025</span>
+      </div>
+      <h2 class="blog-card-title">Discover West Lincoln</h2>
+      <p class="blog-card-excerpt">Our team crafted the narrative, cast the talent, scouted locations, and produced this in-depth look at West Lincoln in Fall 2024 — working with the Chamber of Commerce and local businesses.</p>
+      <span class="blog-card-read">Read More →</span>
+    </div>
+  </a>
+
+</section>
+
+<section class="blog-cta">
+  <p class="section-eyebrow">Work with us</p>
+  <h2>Have a project in mind?</h2>
+  <p>Commercial, corporate, wedding, or drone — let's start a conversation.</p>
+  <a href="contact.html" class="btn-dark">Get In Touch</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <a href="index.html" class="footer-logo">Captivate Photo + Cinema</a>
+    <div class="footer-badges">
+      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener"><span class="stars">★★★★★</span><span>Google Reviews</span></a>
+      <a class="badge" href="https://www.ccaward.com/award-winners/niagara-region/best-video-production-company/captivate-photocinema/" target="_blank" rel="noopener">Consumer Choice Award</a>
+      <a class="badge" href="https://threebestrated.ca/wedding-photographers-in-st-catharines-on" target="_blank" rel="noopener">Three Best Rated 2026</a>
+    </div>
+  </div>
+  <div class="footer-areas">Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA</div>
+  <div class="footer-bottom">
+    <span>St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
+    <span>© 2026 Captivate Photo + Cinema. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  function filterBlog(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.blog-card').forEach(card => {
+      card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+    });
+  }
+</script>
+
+</body>
+</html>
