@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
+  <title>Wedding Photography & Videography St. Catharines, ON | Captivate Photo+Cinema</title>
+  <meta name="description" content="Wedding photographers and videographers in St. Catharines serving Niagara Falls, Niagara-on-the-Lake, Hamilton, and the GTA. Cinematic films and timeless photography for your most important day." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── HERO ── */
+    .w-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; border-bottom: 0.5px solid var(--light-border); }
+    .w-hero-img { overflow: hidden; position: relative; }
+    .w-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .w-hero-text { padding: 4.5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; border-left: 0.5px solid var(--light-border); }
+    .w-hero-text h1 { font-size: clamp(32px, 3.5vw, 46px); line-height: 1.05; margin-bottom: 0.5rem; }
+    .w-hero-text h2 { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.06em; text-transform: none; color: var(--text-secondary); margin-bottom: 2rem; }
+
+    /* ── COPY ── */
+    .w-copy { padding: 4rem 3.5rem; max-width: 680px; border-bottom: 0.5px solid var(--light-border); }
+    .w-copy-love { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 3vw, 40px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-primary); margin-bottom: 0.25rem; }
+    .w-copy-love.italic { font-style: italic; color: var(--text-secondary); font-size: clamp(22px, 2.5vw, 32px); margin-bottom: 1.5rem; }
+    .w-copy-body { font-size: 14px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.85; margin-bottom: 1rem; }
+    .w-copy-body strong { color: var(--text-primary); font-weight: 500; }
+    .w-copy-closer { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-primary); margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid var(--light-border); }
+
+    /* ── FEATURED FILM ── */
+    .w-film { background: var(--black); border-bottom: 0.5px solid #222; }
+    .w-film-top { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+    .w-film-info { padding: 2.5rem 3rem; border-right: 0.5px solid rgba(255,255,255,0.08); }
+    .w-film-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.75rem; font-family: 'Montserrat', sans-serif; }
+    .w-film-title { font-family: 'Oswald', sans-serif; font-size: clamp(22px, 2.5vw, 32px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin-bottom: 0.75rem; }
+    .w-film-desc { font-size: 13px; color: rgba(255,255,255,0.5); font-family: 'Montserrat', sans-serif; line-height: 1.75; }
+    .w-film-meta { padding: 2.5rem 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+    .w-film-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+    .w-film-stat-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-family: 'Montserrat', sans-serif; }
+    .w-film-stat-value { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.8); }
+    .w-film-embed { position: relative; width: 100%; padding-top: 56.25%; }
+    .w-film-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    /* ── MASONRY GRID ── */
+    .w-grid-section { border-top: 0.5px solid var(--light-border); border-bottom: 0.5px solid var(--light-border); }
+    .w-grid-header { padding: 2rem 3rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 0.5px solid var(--light-border); flex-wrap: wrap; gap: 1rem; }
+    .w-grid-header h2 { font-size: 22px; }
+    .masonry { columns: 4; column-gap: 3px; padding: 3px; background: var(--white); }
+    .masonry-item { break-inside: avoid; margin-bottom: 3px; overflow: hidden; position: relative; cursor: pointer; }
+    .masonry-item img { width: 100%; display: block; transition: transform 0.5s ease; }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
+    .masonry-item:hover .masonry-overlay { background: rgba(0,0,0,0.3); }
+    .masonry-expand { opacity: 0; transition: opacity 0.3s; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .masonry-expand::before { content: ''; display: block; width: 12px; height: 12px; border-top: 1.5px solid #fff; border-right: 1.5px solid #fff; transform: rotate(45deg) translate(-2px, 2px); }
+    .masonry-item:hover .masonry-expand { opacity: 1; }
+    .masonry-item.wide img { aspect-ratio: 16/9; object-fit: cover; width: 100%; }
+    .masonry-item.tall img { aspect-ratio: 3/4; object-fit: cover; width: 100%; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 3000; align-items: center; justify-content: center; padding: 1.5rem; }
+    .lightbox.open { display: flex; }
+    .lb-inner { position: relative; max-width: 900px; width: 100%; }
+    .lb-close { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 28px; cursor: pointer; line-height: 1; }
+    .lb-close:hover { color: #fff; }
+    .lb-img { width: 100%; max-height: 80vh; object-fit: contain; display: block; }
+    .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: #fff; font-size: 24px; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lb-nav:hover { background: rgba(255,255,255,0.2); }
+    .lb-prev { left: -56px; }
+    .lb-next { right: -56px; }
+    .lb-counter { text-align: center; margin-top: 0.75rem; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-family: 'Montserrat', sans-serif; }
+
+    /* ── SERVICES STRIP ── */
+    .w-services { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.5px solid var(--light-border); border-bottom: 0.5px solid var(--light-border); }
+    .w-svc { padding: 2rem 1.75rem; border-right: 0.5px solid var(--light-border); }
+    .w-svc:last-child { border-right: none; }
+    .w-svc h3 { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+    .w-svc p { font-size: 12px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.65; }
+
+    /* ── FAQ ── */
+    .w-faq { padding: 3.5rem 3rem; border-bottom: 0.5px solid var(--light-border); display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .w-faq h2 { font-size: 24px; margin-bottom: 1.5rem; }
+    .faq-item { border-bottom: 0.5px solid var(--light-border); padding-bottom: 1.1rem; margin-bottom: 1.1rem; }
+    .faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .faq-q { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.4rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-q::after { content: '+'; font-size: 18px; font-weight: 300; flex-shrink: 0; color: var(--text-secondary); }
+    .faq-q.open::after { content: '−'; }
+    .faq-a { font-size: 12px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.75; display: none; padding-top: 0.4rem; }
+    .faq-a.open { display: block; }
+
+    /* ── AREAS ── */
+    .w-areas { padding: 2.5rem 3rem; border-bottom: 0.5px solid var(--light-border); text-align: center; }
+    .w-areas-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; }
+    .w-areas-list { font-size: 12px; color: var(--text-secondary); line-height: 2.2; letter-spacing: 0.05em; font-family: 'Montserrat', sans-serif; }
+    .w-areas-list a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .w-areas-list a:hover { color: var(--text-primary); }
+    .areas-sep { margin: 0 0.35rem; opacity: 0.3; }
+
+    /* ── CTA ── */
+    .w-cta { padding: 4.5rem 3rem; text-align: center; background: var(--off-white); }
+    .w-cta h2 { font-size: 36px; font-weight: 300; margin-bottom: 0.75rem; }
+    .w-cta p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) { .masonry { columns: 3; } }
+    @media (max-width: 900px) {
+      .w-hero { grid-template-columns: 1fr; }
+      .w-hero-img { min-height: 380px; }
+      .w-hero-text { padding: 2.5rem 1.5rem; border-left: none; border-top: 0.5px solid var(--light-border); }
+      .w-copy { padding: 2.5rem 1.5rem; }
+      .w-film-top { grid-template-columns: 1fr; }
+      .w-film-info { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+      .w-film-meta { flex-direction: row; flex-wrap: wrap; }
+      .w-grid-header { padding: 1.5rem; }
+      .masonry { columns: 2; }
+      .lb-prev { left: -12px; }
+      .lb-next { right: -12px; }
+      .w-services { grid-template-columns: repeat(2, 1fr); }
+      .w-svc:nth-child(2) { border-right: none; }
+      .w-svc:nth-child(3), .w-svc:nth-child(4) { border-top: 0.5px solid var(--light-border); }
+      .w-faq { grid-template-columns: 1fr; gap: 0; }
+      .w-areas { padding: 2rem 1.5rem; }
+      .w-cta { padding: 3rem 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      .masonry { columns: 2; }
+      .w-services { grid-template-columns: 1fr; }
+      .w-svc { border-right: none !important; border-top: 0.5px solid var(--light-border) !important; }
+      .w-svc:first-child { border-top: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Captivate<span>Photo + Cinema</span></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="#">Services</a>
+      <ul class="dropdown">
+        <li><a href="services-commercial.html">Commercial</a></li>
+        <li><a href="services-corporate.html">Corporate</a></li>
+        <li><a href="services-wedding.html">Wedding</a></li>
+        <li><a href="services-drone.html">Drone &amp; Aerial</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="service-areas.html">Service Areas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Inquire Now</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="w-hero">
+  <div class="w-hero-img">
+    <img src="images/weddingphotos/bride-groom-golden-hour-willow-tree-wedding-photography-ontario.webp"
+         alt="Bride and groom touching foreheads under a willow tree at golden hour — romantic wedding photography Southern Ontario by Captivate Photo+Cinema" />
+  </div>
+  <div class="w-hero-text">
+    <p class="section-eyebrow">St. Catharines &nbsp;·&nbsp; Niagara &nbsp;·&nbsp; Hamilton &nbsp;·&nbsp; GTA</p>
+    <h1>Wedding Photography<br>&amp; Videography</h1>
+    <h2>Wedding Photographers &amp; Videographers in St. Catharines, Ontario</h2>
+    <a href="contact.html" class="btn-dark" style="display:inline-block;width:fit-content;">Book a Consultation</a>
+  </div>
+</section>
+
+<!-- ══ COPY ══ -->
+<section class="w-copy">
+  <p class="w-copy-love">We love what we do</p>
+  <p class="w-copy-love italic">and they love what we do</p>
+  <p class="w-copy-body">For more than two decades hundreds of couples have trusted us to capture their day.</p>
+  <p class="w-copy-body">We are <strong>serious about our work</strong>, but we are not serious people. In fact, we are down-to-earth, friendly and we want to have fun on your wedding day. In this incredibly saturated market, we understand that hiring a Photo+Cinema team is more than just nice composition, high-end gear, and a timeless product.</p>
+  <p class="w-copy-body">What sets us apart is our personalities. Your wedding is going to be one of the biggest events in your life and Captivate is with you every step of the way — except down the aisle, that's all you!</p>
+  <p class="w-copy-closer">Our guarantee is that you, yours, and your circle will love what we create for you.</p>
+</section>
+
+<!-- ══ FEATURED FILM ══ -->
+<section class="w-film">
+  <div class="w-film-top">
+    <div class="w-film-info">
+      <p class="w-film-eyebrow">Featured Wedding Film</p>
+      <h2 class="w-film-title">A Captivate Wedding Film</h2>
+      <p class="w-film-desc">This is the kind of film we deliver — cinematic storytelling that captures who you are as a couple. Every edit is crafted with intention, from the emotional moments to the ones that make you laugh.</p>
+    </div>
+    <div class="w-film-meta">
+      <div class="w-film-stat">
+        <span class="w-film-stat-label">Production</span>
+        <span class="w-film-stat-value">Captivate Photo+Cinema</span>
+      </div>
+      <div class="w-film-stat">
+        <span class="w-film-stat-label">Region</span>
+        <span class="w-film-stat-value">Southern Ontario</span>
+      </div>
+      <div class="w-film-stat">
+        <span class="w-film-stat-label">Services</span>
+        <span class="w-film-stat-value">Cinematography &amp; Photography</span>
+      </div>
+    </div>
+  </div>
+  <div class="w-film-embed">
+    <!--
+      Cloudflare Stream embed.
+      Video ID: c638cb4584989cecd3e7493ea3bdeec2
+      To swap this video later, replace the ID in both the src URL and the stream src attribute.
+    -->
+    <iframe
+      src="https://iframe.videodelivery.net/c638cb4584989cecd3e7493ea3bdeec2?poster=https%3A%2F%2Fvideodelivery.net%2Fc638cb4584989cecd3e7493ea3bdeec2%2Fthumbnails%2Fthumbnail.jpg"
+      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- ══ PHOTO GRID ══ -->
+<section class="w-grid-section">
+  <div class="w-grid-header">
+    <h2>The Gallery</h2>
+    <p style="font-size:11px;color:var(--text-secondary);font-family:'Montserrat',sans-serif;letter-spacing:0.1em;">Click any image to view full size</p>
+  </div>
+
+  <div class="masonry" id="masonryGrid">
+
+    <div class="masonry-item tall" onclick="openLb(0)">
+      <img src="images/weddingphotos/bride-groom-winter-snowy-forest-walk-wedding-photography-ontario.webp" alt="Bride and groom walking hand in hand through a snowy forest at sunset — winter wedding photography Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(1)">
+      <img src="images/weddingphotos/bride-wedding-dress-portrait-photography-st-catharines.webp" alt="Bride in elegant lace wedding gown posing before ceremony — bridal portrait photography St. Catharines, Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(2)">
+      <img src="images/weddingphotos/bride-portrait-bouquet-outdoor-wedding-photography-niagara.webp" alt="Bride holding a pink rose bouquet in a white off-shoulder gown outdoors — bridal portrait wedding photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(3)">
+      <img src="images/weddingphotos/groom-teal-suit-peacock-bowtie-portrait-wedding-photography-niagara.webp" alt="Groom in teal suit with peacock feather bowtie and glasses posing in a greenhouse — unique groom portrait wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item wide" onclick="openLb(4)">
+      <img src="images/weddingphotos/bridesmaids-toasting-champagne-getting-ready-wedding-niagara.webp" alt="Bride and bridesmaids in pink robes toasting champagne while getting ready — candid wedding photography by Captivate Photo+Cinema, Niagara Region" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(5)">
+      <img src="images/weddingphotos/bride-reading-letter-window-light-wedding-photography-niagara.webp" alt="Bride in white gown reading a letter by a large window — getting ready wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(6)">
+      <img src="images/weddingphotos/groom-peacock-feather-bowtie-detail-wedding-photography-niagara.webp" alt="Close-up detail of groom in teal suit wearing a unique peacock feather bowtie — creative groom detail wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(7)">
+      <img src="images/weddingphotos/groom-tuxedo-sunglasses-getting-ready-wedding-photography-niagara.webp" alt="Stylish groom in black tuxedo lowering sunglasses by a window while getting ready — groom portrait wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(8)">
+      <img src="images/weddingphotos/groom-portrait-outdoor-wedding-photography-st-catharines.webp" alt="Groom in blue suit smiling outdoors during wedding portraits — wedding photography St. Catharines Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(9)">
+      <img src="images/weddingphotos/bride-portrait-lace-gown-wedding-photography-niagara.webp" alt="Smiling bride in beaded lace wedding gown outdoors — bridal portrait photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(10)">
+      <img src="images/weddingphotos/groom-reading-vows-wedding-ceremony-photography-niagara.webp" alt="Groom in blue suit reading from a vow book during wedding ceremony — wedding ceremony photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(11)">
+      <img src="images/weddingphotos/bride-groom-first-look-bridge-wedding-photography-ontario.webp" alt="Bride surprising groom during first look on a wooden bridge — wedding photography Southern Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(12)">
+      <img src="images/weddingphotos/groom-portrait-ceremony-arch-fountain-wedding-photography-niagara.webp" alt="Groom standing at hexagonal wooden ceremony arch with fountain and garden backdrop — outdoor wedding photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item wide" onclick="openLb(13)">
+      <img src="images/weddingphotos/bride-groom-recessional-outdoor-ceremony-wedding-photography-ontario.webp" alt="Joyful bride and groom walking down the aisle after outdoor ceremony surrounded by bubbles — wedding ceremony photography Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item wide" onclick="openLb(14)">
+      <img src="images/weddingphotos/bride-groom-celebrating-garden-wedding-photography-niagara.webp" alt="Excited bride raising her bouquet beside groom in front of a garden arch — candid wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(15)">
+      <img src="images/weddingphotos/bride-groom-portrait-swing-indoor-wedding-photography-niagara.webp" alt="Bride standing beside groom seated on a macrame swing in a bright white studio — creative wedding portrait photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(16)">
+      <img src="images/weddingphotos/bride-groom-creative-studio-yellow-backdrop-wedding-photography-niagara.webp" alt="Bride and groom posing in front of a bold yellow wave backdrop in a modern studio — creative wedding portrait photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(17)">
+      <img src="images/weddingphotos/bride-groom-white-studio-full-length-wedding-portrait-niagara.webp" alt="Bride and groom holding hands in a bright all-white studio space — elegant full length wedding portrait photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(18)">
+      <img src="images/weddingphotos/south-asian-bride-henna-jewellery-wedding-photography-ontario.webp" alt="South Asian bride with mehndi henna hands and gold jewellery — multicultural wedding photography Southern Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(19)">
+      <img src="images/weddingphotos/south-asian-groom-turban-wedding-portrait-ontario.webp" alt="South Asian groom in sherwani and turban with flower garland — multicultural wedding photography Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(20)">
+      <img src="images/weddingphotos/south-asian-couple-reception-portrait-wedding-photography-ontario.webp" alt="South Asian bride and groom smiling together at wedding reception under warm bokeh lights — multicultural wedding photography Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(21)">
+      <img src="images/weddingphotos/south-asian-groom-sherwani-kirpan-wedding-detail-photography-ontario.webp" alt="Detail shot of South Asian groom in cream sherwani holding ceremonial kirpan with pearl garlands — multicultural wedding photography Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item wide" onclick="openLb(22)">
+      <img src="images/weddingphotos/bride-groom-alpaca-farm-wedding-photography-niagara.webp" alt="Laughing bride and groom posing with alpacas at an outdoor farm wedding — unique wedding photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(23)">
+      <img src="images/weddingphotos/bride-groom-kiss-on-cheek-outdoor-wedding-photography-niagara.webp" alt="Groom kissing bride on the cheek while she smiles at camera surrounded by autumn trees — outdoor couples wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(24)">
+      <img src="images/weddingphotos/bride-groom-winter-portrait-snowy-forest-wedding-photography-niagara.webp" alt="Bride and groom embracing on a snowy lane surrounded by autumn and pine trees — winter wedding photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(25)">
+      <img src="images/weddingphotos/groom-bowtie-boutonniere-portrait-wedding-photography-niagara.webp" alt="Groom in navy suit with floral bowtie and white boutonniere — groom portrait wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item wide" onclick="openLb(26)">
+      <img src="images/weddingphotos/bride-groom-signing-registry-outdoor-wedding-photography-ontario.webp" alt="Smiling bride and groom signing the wedding registry at an outdoor garden ceremony — wedding photography Southern Ontario by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(27)">
+      <img src="images/weddingphotos/bride-flowing-gown-bouquet-brick-hallway-wedding-photography-niagara.webp" alt="Bride in flowing lace gown holding white rose bouquet in a sunlit brick hallway — bridal portrait wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(28)">
+      <img src="images/weddingphotos/bride-groom-cutting-cake-reception-wedding-photography-niagara.webp" alt="Bride and groom laughing while cutting their semi-naked wedding cake at reception — wedding photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(29)">
+      <img src="images/weddingphotos/wedding-cake-star-wars-custom-topper-reception-photography.webp" alt="Creative wedding cake with custom Star Wars cake topper at reception — wedding reception photography by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(30)">
+      <img src="images/weddingphotos/elegant-floral-wedding-cake-reception-photography-niagara.webp" alt="Three tier wedding cake with hand-painted floral decorations at an elegant reception — wedding photography Niagara Region by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+    <div class="masonry-item tall" onclick="openLb(31)">
+      <img src="images/weddingphotos/bride-groom-flower-girl-barn-venue-wedding-photography-niagara.webp" alt="Bride and groom receiving kisses from flower girl at a rustic barn wedding venue with wine barrels — family wedding photography Niagara by Captivate Photo+Cinema" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLb()">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()">✕</button>
+    <button class="lb-nav lb-prev" onclick="navLb(-1)">‹</button>
+    <button class="lb-nav lb-next" onclick="navLb(1)">›</button>
+    <img class="lb-img" id="lbImg" src="" alt="" />
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+</div>
+
+<!-- ══ SERVICES STRIP ══ -->
+<section class="w-services">
+  <div class="w-svc">
+    <h3>Wedding Films</h3>
+    <p>Cinematic same-day edits and full-length films. Your story, told with intention.</p>
+  </div>
+  <div class="w-svc">
+    <h3>Photography</h3>
+    <p>Candid moments and posed portraits — every image crafted to last a lifetime.</p>
+  </div>
+  <div class="w-svc">
+    <h3>Engagement Shoots</h3>
+    <p>The +Anticipate session — get comfortable in front of the camera before your big day.</p>
+  </div>
+  <div class="w-svc">
+    <h3>Drone Aerials</h3>
+    <p>Breathtaking aerial footage of your venue and surroundings — licensed and insured.</p>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="w-faq">
+  <div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How far in advance should we book?</div>
+      <div class="faq-a">We recommend booking at least 6–12 months in advance to secure your date. Popular dates in Niagara — particularly summer and fall — fill quickly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you travel outside Niagara?</div>
+      <div class="faq-a">Absolutely. We regularly work across Hamilton, the GTA, Toronto, and beyond. For weddings over 2–3 hours away we may require overnight accommodation — we'll discuss this during your consultation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Can we hire Captivate for just photo or just video?</div>
+      <div class="faq-a">Yes. We play well with others. We may not be the right fit for every vision, so we want you to have the perfect people for every job. Photo-only and video-only packages are available.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the +Anticipate engagement shoot?</div>
+      <div class="faq-a">It's a pre-wedding session designed to get you comfortable in front of the camera. Couples who do it consistently say their wedding day felt more natural and relaxed. We highly recommend it.</div>
+    </div>
+  </div>
+  <div>
+    <h2>&nbsp;</h2>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you offer same-day edits?</div>
+      <div class="faq-a">Yes — our same-day edit packages allow a short highlight film to be played at your reception. Guests love it, and it's something you'll rewatch forever.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Who owns the rights to our photos and videos?</div>
+      <div class="faq-a">Captivate retains the rights to use imagery for advertising and portfolio purposes. You receive a USB with your edited images and videos, with no watermarks.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Are packages customizable?</div>
+      <div class="faq-a">Absolutely. Every package can be adjusted — more or fewer hours, adding or removing the engagement shoot, raw footage options. Book a free consultation and we'll build something that works for you.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you offer drone videography at weddings?</div>
+      <div class="faq-a">Yes. Our licensed drone operators provide breathtaking aerial footage of your venue and surroundings. Ask about adding drone coverage to your package.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICE AREAS ══ -->
+<section class="w-areas">
+  <p class="w-areas-eyebrow">Wedding photographers &amp; videographers serving</p>
+  <p class="w-areas-list">
+    <a href="service-areas/st-catharines.html">St. Catharines</a><span class="areas-sep">·</span>
+    <a href="service-areas/niagara-falls.html">Niagara Falls</a><span class="areas-sep">·</span>
+    <a href="service-areas/niagara-on-the-lake.html">Niagara-on-the-Lake</a><span class="areas-sep">·</span>
+    <a href="service-areas/welland.html">Welland</a><span class="areas-sep">·</span>
+    <a href="service-areas/thorold.html">Thorold</a><span class="areas-sep">·</span>
+    <a href="service-areas/port-colborne.html">Port Colborne</a><span class="areas-sep">·</span>
+    <a href="service-areas/pelham.html">Pelham</a><span class="areas-sep">·</span>
+    <a href="service-areas/lincoln.html">Lincoln</a><span class="areas-sep">·</span>
+    <a href="service-areas/west-lincoln.html">West Lincoln</a><span class="areas-sep">·</span>
+    <a href="service-areas/grimsby.html">Grimsby</a><span class="areas-sep">·</span>
+    <a href="service-areas/stoney-creek.html">Stoney Creek</a><br>
+    <a href="service-areas/hamilton.html">Hamilton</a><span class="areas-sep">·</span>
+    <a href="service-areas/ancaster.html">Ancaster</a><span class="areas-sep">·</span>
+    <a href="service-areas/burlington.html">Burlington</a><span class="areas-sep">·</span>
+    <a href="service-areas/oakville.html">Oakville</a><span class="areas-sep">·</span>
+    <a href="service-areas/mississauga.html">Mississauga</a><span class="areas-sep">·</span>
+    <a href="service-areas/toronto.html">Toronto</a><span class="areas-sep">·</span>
+    <a href="service-areas/brampton.html">Brampton</a><span class="areas-sep">·</span>
+    <a href="service-areas/vaughan.html">Vaughan</a><span class="areas-sep">·</span>
+    <a href="service-areas/newmarket.html">Newmarket</a><span class="areas-sep">·</span>
+    <a href="service-areas/gta.html">GTA</a>
+  </p>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="w-cta">
+  <p class="section-eyebrow">Let's capture your day</p>
+  <h2>Ready to Book a Consultation?</h2>
+  <p>Tell us about your wedding date, venue, and vision. We'll take it from there.</p>
+  <a href="contact.html" class="btn-dark">Get In Touch</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <a href="index.html" class="footer-logo">Captivate Photo + Cinema</a>
+    <div class="footer-badges">
+      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener"><span class="stars">★★★★★</span><span>Google Reviews</span></a>
+      <a class="badge" href="https://www.ccaward.com/award-winners/niagara-region/best-video-production-company/captivate-photocinema/" target="_blank" rel="noopener">Consumer Choice Award</a>
+      <a class="badge" href="https://threebestrated.ca/wedding-photographers-in-st-catharines-on" target="_blank" rel="noopener">Three Best Rated 2026</a>
+    </div>
+  </div>
+  <div class="footer-areas">Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA</div>
+  <div class="footer-bottom">
+    <span>St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
+    <span>© 2026 Captivate Photo + Cinema. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  const imgs = Array.from(document.querySelectorAll('.masonry-item img'));
+  let current = 0;
+
+  function openLb(idx) {
+    current = idx;
+    updateLb();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navLb(dir) {
+    current = (current + dir + imgs.length) % imgs.length;
+    updateLb();
+  }
+
+  function updateLb() {
+    const img = imgs[current];
+    document.getElementById('lbImg').src = img.src;
+    document.getElementById('lbImg').alt = img.alt;
+    document.getElementById('lbCounter').textContent = `${current + 1} / ${imgs.length}`;
+  }
+
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') navLb(1);
+    if (e.key === 'ArrowLeft') navLb(-1);
+  });
+
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

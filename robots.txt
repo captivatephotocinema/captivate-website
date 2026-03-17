@@ -1,0 +1,11 @@
+# robots.txt — Captivate Photo+Cinema
+# https://www.captivatephotocinema.ca
+
+User-agent: *
+Allow: /
+
+# Block any utility files Google doesn't need to index
+Disallow: /images/
+
+# Sitemap location
+Sitemap: https://www.captivatephotocinema.ca/sitemap.xml
