@@ -4,52 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Captivate Photo+Cinema – St. Catharines, Niagara, GTA</title>
-  <meta name="description" content="View the portfolio of Captivate Photo+Cinema — commercial video, corporate production, wedding films, and drone cinematography across Niagara and the GTA." />
+  <title>Portfolio | Captivate Photo+Cinema – Commercial & Corporate Video Production</title>
+  <meta name="description" content="View the portfolio of Captivate Photo+Cinema — commercial video production, corporate films, and cinematic campaigns across Niagara, Hamilton, and the GTA." />
   <link rel="stylesheet" href="style.css" />
   <style>
     .port-hero { padding: 4rem 3rem 3rem; border-bottom: 0.5px solid var(--light-border); }
     .port-hero h1 { font-size: clamp(36px, 4.5vw, 56px); line-height: 1.05; margin-bottom: 0.6rem; }
-    .port-hero p { font-size: 14px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; }
-    .filter-bar { display: flex; border-bottom: 0.5px solid var(--light-border); overflow-x: auto; }
-    .filter-btn { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; background: transparent; border: none; border-right: 0.5px solid var(--light-border); padding: 1.1rem 1.75rem; cursor: pointer; color: var(--text-secondary); white-space: nowrap; transition: background 0.2s, color 0.2s; }
-    .filter-btn:hover { background: var(--off-white); color: var(--text-primary); }
-    .filter-btn.active { background: var(--black); color: var(--white); }
-    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-border); }
-    .port-item { position: relative; overflow: hidden; cursor: pointer; background: var(--off-white); aspect-ratio: 16/10; }
-    .port-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-    .port-item:hover img { transform: scale(1.04); }
-    .port-placeholder { width: 100%; height: 100%; background: var(--off-white); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-    .port-item:hover .port-placeholder { background: #eae8e4; }
-    .port-ph-inner { text-align: center; }
-    .port-ph-inner p { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; }
-    .port-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; transition: background 0.3s; }
-    .port-item:hover .port-overlay { background: rgba(0,0,0,0.55); }
-    .port-overlay-content { opacity: 0; transform: translateY(8px); transition: opacity 0.3s, transform 0.3s; }
-    .port-item:hover .port-overlay-content { opacity: 1; transform: translateY(0); }
-    .port-tag { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.3rem; font-family: 'Montserrat', sans-serif; }
-    .port-title { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; margin-bottom: 0.5rem; }
-    .port-play { display: inline-flex; align-items: center; gap: 7px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.8); font-family: 'Montserrat', sans-serif; }
-    .port-play-icon { width: 22px; height: 22px; border: 0.5px solid rgba(255,255,255,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .port-play-tri { width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 7px solid rgba(255,255,255,0.9); margin-left: 2px; }
-    .port-type-badge { position: absolute; top: 1rem; right: 1rem; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.85); padding: 4px 10px; font-family: 'Montserrat', sans-serif; }
-    .port-item.hidden { display: none; }
-    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 3000; align-items: center; justify-content: center; padding: 1.5rem; }
+    .port-hero p { font-size: 14px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; max-width: 520px; line-height: 1.75; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-border); min-height: 320px; }
+    .port-item { position: relative; overflow: hidden; background: #0a0a0a; aspect-ratio: 16/10; }
+    .port-thumb { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease, opacity 0.35s ease; }
+    .port-item:hover .port-thumb { transform: scale(1.05); opacity: 0.35; }
+    .port-hover { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; opacity: 0; transition: opacity 0.3s ease; padding: 1.5rem; }
+    .port-item:hover .port-hover { opacity: 1; }
+    .port-hover-title { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); margin-bottom: 6px; text-align: center; }
+    .port-hover-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-family: 'Montserrat', sans-serif; margin-bottom: 2px; text-align: center; }
+    .port-btn { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 0; cursor: pointer; border: none; transition: background 0.2s, color 0.2s, border-color 0.2s; width: 160px; text-align: center; text-decoration: none; display: block; }
+    .port-btn-film { background: #fff; color: #0a0a0a; }
+    .port-btn-film:hover { background: #e8e8e8; }
+    .port-btn-bts { background: transparent; color: rgba(255,255,255,0.75); border: 0.5px solid rgba(255,255,255,0.35); }
+    .port-btn-bts:hover { border-color: rgba(255,255,255,0.75); color: #fff; }
+    .port-badge { position: absolute; top: 1rem; left: 1rem; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.8); padding: 4px 10px; font-family: 'Montserrat', sans-serif; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 3000; align-items: center; justify-content: center; padding: 1.5rem; flex-direction: column; }
     .lightbox.open { display: flex; }
-    .lightbox-inner { position: relative; width: 100%; max-width: 920px; }
-    .lightbox-close { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 28px; cursor: pointer; line-height: 1; }
-    .lightbox-close:hover { color: #fff; }
-    .lightbox-video-wrap { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
-    .lightbox-video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    .lightbox-photo { width: 100%; max-height: 80vh; object-fit: contain; display: block; }
-    .lightbox-caption { margin-top: 1rem; text-align: center; }
-    .lightbox-caption h3 { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin-bottom: 0.3rem; }
-    .lightbox-caption p { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); font-family: 'Montserrat', sans-serif; }
+    .lb-inner { position: relative; width: 100%; max-width: 920px; }
+    .lb-close { position: absolute; top: -2.75rem; right: 0; background: none; border: none; color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; gap: 8px; transition: color 0.2s; padding: 0; }
+    .lb-close:hover { color: #fff; }
+    .lb-video-wrap { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
+    .lb-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .lb-meta { margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .lb-title { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; }
+    .lb-sub { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-family: 'Montserrat', sans-serif; margin-top: 3px; }
+    .lb-project-btn { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); border: 0.5px solid rgba(255,255,255,0.2); padding: 10px 20px; text-decoration: none; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+    .lb-project-btn:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+    .port-more { grid-column: span 2; display: flex; align-items: center; justify-content: center; background: var(--off-white); min-height: 180px; }
+    .port-more-inner { text-align: center; }
+    .port-more-inner p { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 2; }
     .port-cta { padding: 4rem 3rem; text-align: center; background: var(--off-white); border-top: 0.5px solid var(--light-border); }
-    .port-cta h2 { font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
-    .port-cta p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; line-height: 1.7; }
-    @media (max-width: 900px) { .port-hero { padding: 3rem 1.5rem 2.5rem; } .portfolio-grid { grid-template-columns: repeat(2, 1fr); } .port-cta { padding: 3rem 1.5rem; } }
-    @media (max-width: 560px) { .portfolio-grid { grid-template-columns: 1fr; } }
+    .port-cta h2 { font-size: 34px; font-weight: 300; margin-bottom: 0.75rem; }
+    .port-cta p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; line-height: 1.7; max-width: 420px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 900px) {
+      .port-hero { padding: 3rem 1.5rem 2.5rem; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .port-more { grid-column: span 1; }
+      .port-cta { padding: 3rem 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -76,174 +75,62 @@
 </nav>
 
 <section class="port-hero">
-  <p class="section-eyebrow">Our Work</p>
-  <h1>Portfolio</h1>
-  <p>Commercial, corporate, wedding, and aerial work across Southern Ontario.</p>
+  <p class="section-eyebrow">Commercial · Corporate · Drone</p>
+  <h1>Our Work</h1>
+  <p>A selection of commercial and corporate productions from across Niagara, Hamilton, and the GTA. Each project page includes the full film, breakout cuts, and behind the scenes.</p>
 </section>
 
-<div class="filter-bar">
-  <button class="filter-btn active" onclick="filterItems('all',this)">All</button>
-  <button class="filter-btn" onclick="filterItems('commercial',this)">Commercial</button>
-  <button class="filter-btn" onclick="filterItems('corporate',this)">Corporate</button>
-  <button class="filter-btn" onclick="filterItems('wedding',this)">Wedding</button>
-  <button class="filter-btn" onclick="filterItems('drone',this)">Drone &amp; Aerial</button>
+<div class="portfolio-grid">
+
+  <div class="port-item">
+    <img class="port-thumb"
+         src="https://videodelivery.net/e4f26a58983b52268e7df3e5ed104604/thumbnails/thumbnail.jpg"
+         alt="West Lincoln Municipal Brand Film — Captivate Photo+Cinema" />
+    <span class="port-badge">Commercial · Corporate</span>
+    <div class="port-hover">
+      <div class="port-hover-tag">Township of West Lincoln</div>
+      <div class="port-hover-title">West Lincoln</div>
+      <button class="port-btn port-btn-film" onclick="openFilm('e4f26a58983b52268e7df3e5ed104604','West Lincoln','Municipal Brand Film','projects/west-lincoln.html')">&#9654;&nbsp; View Film</button>
+      <a class="port-btn port-btn-bts" href="projects/west-lincoln.html">Behind the Scenes</a>
+    </div>
+  </div>
+
+  <div class="port-more">
+    <div class="port-more-inner">
+      <p>More projects coming soon<br>— check back shortly</p>
+    </div>
+  </div>
+
 </div>
 
-<!--
-=================================================================
-  HOW TO ADD PORTFOLIO ITEMS
-=================================================================
-
-  VIDEO via Cloudflare Stream:
-  - Upload your video to Cloudflare Stream dashboard
-  - Copy the Video ID (looks like: a7b8c9d0e1f2...)
-  - Set data-type="video" data-source="cloudflare" data-id="YOUR_CLOUDFLARE_VIDEO_ID"
-
-  VIDEO via YouTube (backup/public videos):
-  - Set data-type="video" data-source="youtube" data-id="YOUR_YOUTUBE_VIDEO_ID"
-  - YouTube ID is the part after ?v= in the URL
-
-  PHOTO:
-  - Set data-type="photo" data-photo="images/your-photo.jpg"
-  - Upload photo to your /images/ folder in GitHub
-
-  THUMBNAIL image: replace the <img src="..."> with your own image path
-  TITLE: update .port-title text
-  TAG: update .port-tag text (Category · Location)
-  CATEGORY: data-category can be "commercial" "corporate" "wedding" or "drone"
-=================================================================
--->
-<section class="portfolio-grid" id="portfolioGrid">
-
-  <!-- EXAMPLE: Cloudflare Stream video -->
-  <!-- Replace YOUR_CLOUDFLARE_VIDEO_ID with the actual ID from your Stream dashboard -->
-  <div class="port-item"
-    data-category="commercial"
-    data-type="video"
-    data-source="cloudflare"
-    data-id="YOUR_CLOUDFLARE_VIDEO_ID"
-    onclick="openLightbox(this)">
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/1000x0/3525150_1000x0.jpg" alt="Discover West Lincoln – Commercial Video Production Niagara" />
-    <div class="port-type-badge">Video</div>
-    <div class="port-overlay">
-      <div class="port-overlay-content">
-        <p class="port-tag">Commercial &nbsp;·&nbsp; West Lincoln</p>
-        <h3 class="port-title">Discover West Lincoln</h3>
-        <div class="port-play"><div class="port-play-icon"><div class="port-play-tri"></div></div>Watch Film</div>
-      </div>
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeFilm()">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeFilm()">&#x2715; &nbsp; Close</button>
+    <div class="lb-video-wrap">
+      <iframe id="lb-iframe" src="" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     </div>
-  </div>
-
-  <!-- EXAMPLE: YouTube video (use for any public YouTube content) -->
-  <div class="port-item"
-    data-category="corporate"
-    data-type="video"
-    data-source="youtube"
-    data-id="oAhwSoW-keg"
-    onclick="openLightbox(this)">
-    <div class="port-placeholder"><div class="port-ph-inner"><p>Add thumbnail</p><p style="margin-top:4px;opacity:0.5;">South Niagara Hospital</p></div></div>
-    <div class="port-type-badge">Video</div>
-    <div class="port-overlay">
-      <div class="port-overlay-content">
-        <p class="port-tag">Corporate &nbsp;·&nbsp; Niagara Falls</p>
-        <h3 class="port-title">South Niagara Hospital</h3>
-        <div class="port-play"><div class="port-play-icon"><div class="port-play-tri"></div></div>Watch Film</div>
+    <div class="lb-meta">
+      <div>
+        <div class="lb-title" id="lb-title"></div>
+        <div class="lb-sub" id="lb-sub"></div>
       </div>
-    </div>
-  </div>
-
-  <!-- EXAMPLE: Photo -->
-  <div class="port-item"
-    data-category="wedding"
-    data-type="photo"
-    data-photo="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589430_0x500.jpg"
-    onclick="openLightbox(this)">
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589430_0x500.jpg" alt="Wedding photography St. Catharines Niagara" />
-    <div class="port-type-badge">Photo</div>
-    <div class="port-overlay">
-      <div class="port-overlay-content">
-        <p class="port-tag">Wedding Photo &nbsp;·&nbsp; St. Catharines</p>
-        <h3 class="port-title">Add Couple Name</h3>
-        <div class="port-play"><span style="font-size:14px;color:rgba(255,255,255,0.8);">⊕</span><span style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.8);margin-left:6px;">View Photo</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="port-item"
-    data-category="corporate"
-    data-type="video"
-    data-source="youtube"
-    data-id="oAhwSoW-keg"
-    onclick="openLightbox(this)">
-    <div class="port-placeholder"><div class="port-ph-inner"><p>Add thumbnail</p><p style="margin-top:4px;opacity:0.5;">Private Markets Forum</p></div></div>
-    <div class="port-type-badge">Video</div>
-    <div class="port-overlay">
-      <div class="port-overlay-content">
-        <p class="port-tag">Corporate &nbsp;·&nbsp; Toronto</p>
-        <h3 class="port-title">Private Markets Forum</h3>
-        <div class="port-play"><div class="port-play-icon"><div class="port-play-tri"></div></div>Watch Film</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="port-item"
-    data-category="drone"
-    data-type="video"
-    data-source="cloudflare"
-    data-id="YOUR_CLOUDFLARE_VIDEO_ID"
-    onclick="openLightbox(this)">
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589429_0x500.jpg" alt="Drone aerial cinematography Niagara Region" />
-    <div class="port-type-badge">Drone</div>
-    <div class="port-overlay">
-      <div class="port-overlay-content">
-        <p class="port-tag">Drone &amp; Aerial &nbsp;·&nbsp; Niagara Region</p>
-        <h3 class="port-title">Add Drone Project</h3>
-        <div class="port-play"><div class="port-play-icon"><div class="port-play-tri"></div></div>Watch Film</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="port-item"
-    data-category="wedding"
-    data-type="photo"
-    data-photo="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589427_0x500.jpg"
-    onclick="openLightbox(this)">
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589427_0x500.jpg" alt="Wedding photography Niagara" />
-    <div class="port-type-badge">Photo</div>
-    <div class="port-overlay">
-      <div class="port-overlay-content">
-        <p class="port-tag">Wedding Photo &nbsp;·&nbsp; Niagara-on-the-Lake</p>
-        <h3 class="port-title">Add Couple Name</h3>
-        <div class="port-play"><span style="font-size:14px;color:rgba(255,255,255,0.8);">⊕</span><span style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;font-family:'Montserrat',sans-serif;color:rgba(255,255,255,0.8);margin-left:6px;">View Photo</span></div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <div id="lightboxContent"></div>
-    <div class="lightbox-caption">
-      <h3 id="lightboxTitle"></h3>
-      <p id="lightboxTag"></p>
+      <a class="lb-project-btn" id="lb-project-link" href="#">View Full Project &amp; Behind the Scenes &#8594;</a>
     </div>
   </div>
 </div>
 
 <section class="port-cta">
-  <h2>Like What You See?</h2>
-  <p>Let's talk about what we can create for you.</p>
-  <a href="contact.html" class="btn-dark">Start Your Inquiry</a>
+  <p class="section-eyebrow">Let's create something</p>
+  <h2>Ready to Start<br>Your Project?</h2>
+  <p>Tell us about your brand, your audience, and your goal. We'll take it from there.</p>
+  <a href="contact.html" class="btn-dark">Get In Touch</a>
 </section>
 
 <footer>
   <div class="footer-top">
     <a href="index.html" class="footer-logo">Captivate Photo + Cinema</a>
     <div class="footer-badges">
-      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener"><span class="stars">★★★★★</span><span>Google Reviews</span></a>
+      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Google Reviews</span></a>
       <a class="badge" href="https://www.ccaward.com/award-winners/niagara-region/best-video-production-company/captivate-photocinema/" target="_blank" rel="noopener">Consumer Choice Award</a>
       <a class="badge" href="https://threebestrated.ca/wedding-photographers-in-st-catharines-on" target="_blank" rel="noopener">Three Best Rated 2026</a>
     </div>
@@ -251,60 +138,25 @@
   <div class="footer-areas">Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA</div>
   <div class="footer-bottom">
     <span>St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
-    <span>© 2026 Captivate Photo + Cinema. All rights reserved.</span>
+    <span>&copy; 2026 Captivate Photo + Cinema. All rights reserved.</span>
   </div>
 </footer>
 
 <script>
-  // ── FILTER ──
-  function filterItems(category, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.port-item').forEach(item => {
-      item.classList.toggle('hidden', category !== 'all' && item.dataset.category !== category);
-    });
-  }
-
-  // ── LIGHTBOX ──
-  function openLightbox(item) {
-    const type   = item.dataset.type;
-    const source = item.dataset.source;
-    const id     = item.dataset.id;
-    const photo  = item.dataset.photo;
-    const title  = item.querySelector('.port-title').textContent;
-    const tag    = item.querySelector('.port-tag').textContent;
-    let html = '';
-
-    if (type === 'video') {
-      let src = '';
-      if (source === 'cloudflare') {
-        // Cloudflare Stream embed URL format
-        src = `https://iframe.videodelivery.net/${id}?autoplay=true`;
-      } else {
-        // YouTube embed URL format
-        src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
-      }
-      html = `<div class="lightbox-video-wrap">
-        <iframe src="${src}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-      </div>`;
-    } else if (type === 'photo') {
-      html = `<img class="lightbox-photo" src="${photo}" alt="${title}" />`;
-    }
-
-    document.getElementById('lightboxContent').innerHTML = html;
-    document.getElementById('lightboxTitle').textContent = title;
-    document.getElementById('lightboxTag').textContent = tag;
+  function openFilm(id, title, sub, projectUrl) {
+    document.getElementById('lb-iframe').src = 'https://iframe.videodelivery.net/' + id + '?autoplay=true';
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-sub').textContent = sub;
+    document.getElementById('lb-project-link').href = projectUrl;
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
-  function closeLightbox() {
+  function closeFilm() {
+    document.getElementById('lb-iframe').src = '';
     document.getElementById('lightbox').classList.remove('open');
-    document.getElementById('lightboxContent').innerHTML = '';
     document.body.style.overflow = '';
   }
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeFilm(); });
 </script>
 
 </body>
