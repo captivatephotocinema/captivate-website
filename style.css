@@ -90,7 +90,9 @@ nav {
 
 /* Dropdown */
 .nav-links .dropdown {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -100,10 +102,27 @@ nav {
   padding: 0.5rem 0;
   list-style: none;
   z-index: 200;
-  margin-top: 0.5rem;
+  /* padding-top bridges the gap so mouse travel doesn't break hover */
+  margin-top: 0;
+  padding-top: 0.75rem;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-.nav-links .has-dropdown:hover .dropdown { display: block; }
+/* Invisible bridge so mouse can travel from link to dropdown without gap */
+.nav-links .has-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.75rem;
+}
+
+.nav-links .has-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
 
 .nav-links .dropdown li a {
   display: block;
