@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
+  <title>Commercial Video Production St. Catharines, ON | Captivate Photo+Cinema</title>
+  <meta name="description" content="Commercial video production company in St. Catharines serving Niagara, Hamilton, and the GTA. Brand films, product videos, and campaigns from concept to completion." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* HERO */
+    .c-hero { position: relative; background: #080808; overflow: hidden; min-height: 520px; display: flex; align-items: flex-end; }
+    .c-hero-img { position: absolute; inset: 0; }
+    .c-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0.55; }
+    .c-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%); }
+    .c-hero-content { position: relative; z-index: 2; padding: 0 3rem 3.5rem; }
+    .c-hero-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.85rem; font-family: 'Montserrat', sans-serif; }
+    .c-hero h1 { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: clamp(38px, 5vw, 62px); line-height: 1.0; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+    .c-hero-sub { font-size: 14px; color: rgba(255,255,255,0.65); font-family: 'Montserrat', sans-serif; max-width: 520px; line-height: 1.75; margin-bottom: 1.75rem; }
+    .c-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-hero-w { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; background: #fff; color: #0a0a0a; border: none; padding: 13px 28px; cursor: pointer; font-weight: 400; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+    .btn-hero-w:hover { opacity: 0.85; }
+    .btn-hero-g { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; background: transparent; color: rgba(255,255,255,0.75); border: 0.5px solid rgba(255,255,255,0.35); padding: 13px 28px; cursor: pointer; font-weight: 300; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+    .btn-hero-g:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+    /* INTRO */
+    .c-intro { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--light-border); }
+    .c-intro-text { padding: 4rem 3.5rem; border-right: 0.5px solid var(--light-border); }
+    .c-intro-text h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.1; margin-bottom: 1.25rem; }
+    .c-intro-text p { font-size: 14px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.85; margin-bottom: 1rem; }
+    .c-intro-text p strong { color: var(--text-primary); font-weight: 500; }
+    .c-intro-img { overflow: hidden; }
+    .c-intro-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* AMBITION - THE 5 POINTS */
+    .c-ambition { background: var(--black); border-bottom: 0.5px solid #222; padding: 4rem 3rem; }
+    .c-ambition-top { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .c-ambition-label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.75rem; font-family: 'Montserrat', sans-serif; }
+    .c-ambition h2 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 3vw, 40px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin-bottom: 1rem; }
+    .c-ambition-desc { font-size: 14px; color: rgba(255,255,255,0.55); font-family: 'Montserrat', sans-serif; line-height: 1.8; }
+    .c-ambition-right { display: flex; flex-direction: column; justify-content: center; }
+    .c-ambition-note { font-size: 13px; color: rgba(255,255,255,0.45); font-family: 'Montserrat', sans-serif; line-height: 1.8; border-left: 2px solid rgba(255,255,255,0.15); padding-left: 1.5rem; }
+    .c-ambition-note strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+    /* THE 5 POINTS LIST */
+    .c-five { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.06); }
+    .c-five-item { padding: 1.75rem 1.5rem; text-align: center; }
+    .c-five-num { font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 0.2em; color: rgba(255,255,255,0.25); margin-bottom: 0.5rem; }
+    .c-five-word { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin-bottom: 0.4rem; }
+    .c-five-word.highlight { color: #e6a817; }
+    .c-five-desc { font-size: 11px; color: rgba(255,255,255,0.4); font-family: 'Montserrat', sans-serif; line-height: 1.5; }
+
+    /* PROCESS - THE 5 A'S */
+    .c-process { border-bottom: 0.5px solid var(--light-border); }
+    .c-process-header { padding: 3rem 3rem 2rem; border-bottom: 0.5px solid var(--light-border); }
+    .c-process-header h2 { font-size: 28px; margin-bottom: 0.5rem; }
+    .c-process-header p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.7; max-width: 560px; }
+
+    .c-step { display: grid; grid-template-columns: 280px 1fr 1fr; border-bottom: 0.5px solid var(--light-border); min-height: 260px; }
+    .c-step:last-child { border-bottom: none; }
+    .c-step-label { padding: 2.5rem 2.5rem; border-right: 0.5px solid var(--light-border); display: flex; flex-direction: column; justify-content: space-between; background: var(--off-white); }
+    .c-step-num { font-size: 10px; letter-spacing: 0.22em; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
+    .c-step-name { font-family: 'Oswald', sans-serif; font-size: 32px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-primary); line-height: 1; }
+    .c-step-text { padding: 2.5rem 2.5rem; border-right: 0.5px solid var(--light-border); display: flex; flex-direction: column; justify-content: center; }
+    .c-step-text p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.85; margin-bottom: 0.75rem; }
+    .c-step-text p:last-child { margin-bottom: 0; }
+    .c-step-text p strong { color: var(--text-primary); font-weight: 500; }
+    .c-step-text ul { list-style: none; margin-top: 0.75rem; }
+    .c-step-text ul li { font-size: 12px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; padding: 0.4rem 0; border-bottom: 0.5px solid var(--light-border); display: flex; align-items: center; gap: 0.75rem; }
+    .c-step-text ul li:last-child { border-bottom: none; }
+    .c-step-text ul li::before { content: ''; display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--text-secondary); flex-shrink: 0; opacity: 0.5; }
+    .c-step-img { overflow: hidden; }
+    .c-step-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .c-step:hover .c-step-img img { transform: scale(1.03); }
+
+    /* BTS GRID */
+    .c-grid-section { border-top: 0.5px solid var(--light-border); border-bottom: 0.5px solid var(--light-border); }
+    .c-grid-header { padding: 2rem 3rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 0.5px solid var(--light-border); flex-wrap: wrap; gap: 1rem; }
+    .c-grid-header h2 { font-size: 22px; }
+    .masonry { columns: 4; column-gap: 3px; padding: 3px; }
+    .masonry-item { break-inside: avoid; margin-bottom: 3px; overflow: hidden; position: relative; cursor: pointer; }
+    .masonry-item img { width: 100%; display: block; transition: transform 0.5s ease; }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
+    .masonry-item:hover .masonry-overlay { background: rgba(0,0,0,0.3); }
+    .masonry-expand { opacity: 0; transition: opacity 0.3s; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .masonry-expand::before { content: ''; display: block; width: 12px; height: 12px; border-top: 1.5px solid #fff; border-right: 1.5px solid #fff; transform: rotate(45deg) translate(-2px, 2px); }
+    .masonry-item:hover .masonry-expand { opacity: 1; }
+    .masonry-item.wide img { aspect-ratio: 16/9; object-fit: cover; width: 100%; }
+    .masonry-item.tall img { aspect-ratio: 3/4; object-fit: cover; width: 100%; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 3000; align-items: center; justify-content: center; padding: 1.5rem; }
+    .lightbox.open { display: flex; }
+    .lb-inner { position: relative; max-width: 920px; width: 100%; }
+    .lb-close { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 28px; cursor: pointer; line-height: 1; }
+    .lb-close:hover { color: #fff; }
+    .lb-img { width: 100%; max-height: 80vh; object-fit: contain; display: block; }
+    .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: #fff; font-size: 24px; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lb-nav:hover { background: rgba(255,255,255,0.2); }
+    .lb-prev { left: -56px; }
+    .lb-next { right: -56px; }
+    .lb-counter { text-align: center; margin-top: 0.75rem; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-family: 'Montserrat', sans-serif; }
+
+    /* AREAS */
+    .c-areas { padding: 2.5rem 3rem; border-bottom: 0.5px solid var(--light-border); text-align: center; }
+    .c-areas-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; }
+    .c-areas-list { font-size: 12px; color: var(--text-secondary); line-height: 2.2; letter-spacing: 0.05em; font-family: 'Montserrat', sans-serif; }
+    .c-areas-list a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .c-areas-list a:hover { color: var(--text-primary); }
+    .areas-sep { margin: 0 0.35rem; opacity: 0.3; }
+
+    /* CTA */
+    .c-cta { padding: 4.5rem 3rem; text-align: center; background: var(--off-white); }
+    .c-cta h2 { font-size: 36px; font-weight: 300; margin-bottom: 0.75rem; }
+    .c-cta p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) { .masonry { columns: 3; } .c-five { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) {
+      .c-hero-content { padding: 0 1.5rem 2.5rem; }
+      .c-intro { grid-template-columns: 1fr; }
+      .c-intro-text { padding: 2.5rem 1.5rem; border-right: none; border-bottom: 0.5px solid var(--light-border); }
+      .c-intro-img { min-height: 280px; }
+      .c-ambition { padding: 2.5rem 1.5rem; }
+      .c-ambition-top { grid-template-columns: 1fr; gap: 1.5rem; }
+      .c-five { grid-template-columns: repeat(2, 1fr); }
+      .c-process-header { padding: 2rem 1.5rem 1.5rem; }
+      .c-step { grid-template-columns: 1fr; }
+      .c-step-label { border-right: none; border-bottom: 0.5px solid var(--light-border); min-height: auto; padding: 1.5rem; flex-direction: row; align-items: center; gap: 1rem; }
+      .c-step-text { border-right: none; border-bottom: 0.5px solid var(--light-border); padding: 1.5rem; }
+      .c-step-img { min-height: 220px; }
+      .c-grid-header { padding: 1.5rem; }
+      .masonry { columns: 2; }
+      .lb-prev { left: -12px; }
+      .lb-next { right: -12px; }
+      .c-areas { padding: 2rem 1.5rem; }
+      .c-cta { padding: 3rem 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      .c-five { grid-template-columns: 1fr 1fr; }
+      .masonry { columns: 2; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Captivate<span>Photo + Cinema</span></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="#">Services</a>
+      <ul class="dropdown">
+        <li><a href="services-commercial.html">Commercial</a></li>
+        <li><a href="services-corporate.html">Corporate</a></li>
+        <li><a href="services-wedding.html">Wedding</a></li>
+        <li><a href="services-drone.html">Drone &amp; Aerial</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="service-areas.html">Service Areas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Inquire Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="c-hero">
+  <div class="c-hero-img">
+    <img src="images/commercial/commercial-video-production-crew-night-shoot-fire-trucks-ontario.webp"
+         alt="Captivate commercial video production crew filming a large-scale night shoot — commercial video production St. Catharines Ontario" />
+  </div>
+  <div class="c-hero-overlay"></div>
+  <div class="c-hero-content">
+    <p class="c-hero-eyebrow">St. Catharines &nbsp;·&nbsp; Niagara &nbsp;·&nbsp; Hamilton &nbsp;·&nbsp; GTA</p>
+    <h1>Commercial<br>Video Production</h1>
+    <p class="c-hero-sub">From Concept to Completion — connecting your product or service to your target audience with stand-out content that delivers the intended message.</p>
+    <div class="c-hero-btns">
+      <a href="portfolio.html" class="btn-hero-w">View Our Work</a>
+      <a href="contact.html" class="btn-hero-g">Start a Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="c-intro">
+  <div class="c-intro-text">
+    <p class="section-eyebrow">Commercial Photographers &amp; Videographers · St. Catharines, ON</p>
+    <h2>From Concept<br>to Completion</h2>
+    <p>Our seasoned team of professionals will connect your product or service to your target audience. We are ready for the challenge of creating a <strong>stand-out video</strong> that not only attracts your audience but delivers the intended message.</p>
+    <p>Our task, with every client, is to <strong>conceive</strong> a new idea or build upon an established one — all while aligning with the core fundamentals of your brand.</p>
+    <p>We work best with <strong>Story Led Content.</strong> Our writing team has 15+ years of experience developing ideas that translate from script to screen.</p>
+    <a href="contact.html" class="btn-dark" style="display:inline-block;width:fit-content;margin-top:0.5rem;">Start a Conversation</a>
+  </div>
+  <div class="c-intro-img">
+    <img src="images/commercial/adam-stephenson-director-commercial-video-production-st-catharines.webp"
+         alt="Director Adam Stephenson reviewing footage during a commercial shoot — commercial video production St. Catharines by Captivate Photo+Cinema" />
+  </div>
+</section>
+
+<!-- AMBITION -->
+<section class="c-ambition">
+  <div class="c-ambition-top">
+    <div>
+      <p class="c-ambition-label">The Foundation</p>
+      <h2>Ambition</h2>
+      <p class="c-ambition-desc">You need to reach your audience. There is a missing link between you and your customers. You need a creative team like Captivate to design and deliver a product that does the following:</p>
+    </div>
+    <div class="c-ambition-right">
+      <p class="c-ambition-note">Of all the features listed, <strong>Evoke Action</strong> is the most important. This is when your customers have seen and heard what they need — and ultimately decide to contact you.</p>
+    </div>
+  </div>
+  <div class="c-five">
+    <div class="c-five-item">
+      <div class="c-five-num">01</div>
+      <div class="c-five-word">Entertain</div>
+      <div class="c-five-desc">Capture attention and hold it</div>
+    </div>
+    <div class="c-five-item">
+      <div class="c-five-num">02</div>
+      <div class="c-five-word">Educate</div>
+      <div class="c-five-desc">Inform your audience about your offering</div>
+    </div>
+    <div class="c-five-item">
+      <div class="c-five-num">03</div>
+      <div class="c-five-word">Explain</div>
+      <div class="c-five-desc">Make the complex simple and clear</div>
+    </div>
+    <div class="c-five-item">
+      <div class="c-five-num">04</div>
+      <div class="c-five-word">Elicit Feeling</div>
+      <div class="c-five-desc">Create an emotional connection</div>
+    </div>
+    <div class="c-five-item">
+      <div class="c-five-num">05</div>
+      <div class="c-five-word highlight">Evoke Action</div>
+      <div class="c-five-desc">Move your audience to contact you</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE 5 A'S PROCESS -->
+<section class="c-process">
+  <div class="c-process-header">
+    <p class="section-eyebrow">Our Creative Process</p>
+    <h2>The 5 A's</h2>
+    <p>Here is a look at our creative process — the framework we use as a guideline for every successful campaign.</p>
+  </div>
+
+  <!-- APPROACH -->
+  <div class="c-step">
+    <div class="c-step-label">
+      <div>
+        <div class="c-step-num">01</div>
+        <div class="c-step-name">Approach</div>
+      </div>
+    </div>
+    <div class="c-step-text">
+      <p>Formally known as Pre-production — but it's much more than that. This is the most critical step in the entire process. It's not a <strong>Plan of Action</strong>, rather a <strong>Plan to Action.</strong></p>
+      <p>We spend time with you listening to your ideas, learning your brand, and observing the competition. We move from concept, to script, to storyboard — taking your input and feedback as we go.</p>
+      <p>Once you're satisfied with the concept, we take care of:</p>
+      <ul>
+        <li>Casting</li>
+        <li>Location Scouting</li>
+        <li>Props &amp; Wardrobe</li>
+        <li>Permits &amp; Scheduling</li>
+      </ul>
+    </div>
+    <div class="c-step-img">
+      <img src="images/commercial/commercial-video-production-director-script-on-set-ontario.webp"
+           alt="Director reviewing script on a commercial production set — commercial video production Ontario by Captivate Photo+Cinema" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- ACTION -->
+  <div class="c-step">
+    <div class="c-step-label">
+      <div>
+        <div class="c-step-num">02</div>
+        <div class="c-step-name">Action</div>
+      </div>
+    </div>
+    <div class="c-step-text">
+      <p><strong>(Lights and Camera come before Action!)</strong></p>
+      <p>This is when we commit the concept to the digital film medium. It's the most fun and exciting part of the entire process.</p>
+      <p>We work with state-of-the-art cameras, high-end lenses, modern lighting, and professional sound recording tools to deliver the best product possible. You will also have the Director on set working with the cast &amp; crew to pioneer the project shot-to-shot and day-to-day.</p>
+    </div>
+    <div class="c-step-img">
+      <img src="images/commercial/commercial-video-production-crew-on-set-niagara.webp"
+           alt="Captivate production crew operating cameras and jib on a professional set — commercial video production Niagara by Captivate Photo+Cinema" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- ASSEMBLE -->
+  <div class="c-step">
+    <div class="c-step-label">
+      <div>
+        <div class="c-step-num">03</div>
+        <div class="c-step-name">Assemble</div>
+      </div>
+    </div>
+    <div class="c-step-text">
+      <p>Every shot captured during the Action step is backed up — and backed up again. We use enterprise-level backup solutions to ensure all footage is redundant in both physical and cloud-based locations.</p>
+      <p>Editing begins immediately as we build the <strong>Rough Cut.</strong> After review we maintain open communication and work with your feedback. We then move to the <strong>Fine Cut</strong> — where colour grading, voice-over, sound design, graphics, and animations lead to a broadcast-ready final product.</p>
+    </div>
+    <div class="c-step-img">
+      <img src="images/commercial/commercial-video-production-director-headphones-on-set-niagara.webp"
+           alt="Director wearing headphones monitoring audio beside a cinema camera — commercial video production Niagara by Captivate Photo+Cinema" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- ACTUATE -->
+  <div class="c-step">
+    <div class="c-step-label">
+      <div>
+        <div class="c-step-num">04</div>
+        <div class="c-step-name">Actuate</div>
+      </div>
+    </div>
+    <div class="c-step-text">
+      <p>The product is complete — you have your content ready. Now you need to get it in front of your audience.</p>
+      <p>Through communication, we plan a <strong>strategy for release</strong> which will motivate your customers to contact you. Part of this plan is created during the Approach phase.</p>
+      <p>Additionally, we provide archival options and can deliver your content in virtually any format. Every project maintains a <strong>modular build</strong> so you can revisit and add or remove features based on your evolving needs.</p>
+    </div>
+    <div class="c-step-img">
+      <img src="images/commercial/commercial-video-production-playback-monitor-on-set-niagara.webp"
+           alt="Producer reviewing playback on phone during a commercial shoot — video production Niagara by Captivate Photo+Cinema" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- ADVANCE (new - organic growth) -->
+  <div class="c-step">
+    <div class="c-step-label">
+      <div>
+        <div class="c-step-num">05</div>
+        <div class="c-step-name">Advance</div>
+      </div>
+    </div>
+    <div class="c-step-text">
+      <p>A great campaign doesn't end at delivery. The best content grows over time — generating leads, building brand equity, and opening new opportunities.</p>
+      <p>We stay connected with our commercial clients as <strong>long-term creative partners.</strong> Whether it's a second phase of content, a new product launch, or a refresh of existing material — Captivate is ready to advance your story.</p>
+    </div>
+    <div class="c-step-img">
+      <img src="images/commercial/commercial-video-production-two-camera-operators-outdoor-shoot-ontario.webp"
+           alt="Two camera operators working with a cinema camera on a gimbal outdoors — commercial video production Ontario by Captivate Photo+Cinema" loading="lazy" />
+    </div>
+  </div>
+
+</section>
+
+<!-- BTS GALLERY -->
+<section class="c-grid-section">
+  <div class="c-grid-header">
+    <h2>Behind the Scenes</h2>
+    <p style="font-size:11px;color:var(--text-secondary);font-family:'Montserrat',sans-serif;letter-spacing:0.1em;">Click any image to view full size</p>
+  </div>
+  <div class="masonry" id="masonryGrid">
+
+    <div class="masonry-item wide" onclick="openLb(0)">
+      <img src="images/commercial/commercial-video-production-full-crew-boom-operator-ontario.webp" alt="Full production crew on location with boom operator and camera team" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item tall" onclick="openLb(1)">
+      <img src="images/commercial/commercial-video-production-sound-operator-night-shoot-niagara.webp" alt="Sound operator with boom microphone during a dramatic night shoot" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(2)">
+      <img src="images/commercial/adam-stephenson-director-briefing-fire-chief-commercial-shoot-ontario.webp" alt="Director Adam Stephenson reviewing script with fire chief on a large-scale commercial shoot" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(3)">
+      <img src="images/commercial/commercial-video-production-lighting-setup-night-shoot-niagara.webp" alt="Professional lighting setup with softboxes during a large commercial night shoot" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(4)">
+      <img src="images/commercial/commercial-video-production-sound-crew-first-responders-on-set-niagara.webp" alt="Sound crew recording audio alongside first responder cast on a commercial shoot" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item tall" onclick="openLb(5)">
+      <img src="images/commercial/commercial-video-production-director-monitoring-dawn-shoot-ontario.webp" alt="Director reviewing footage on tablet during a dawn exterior shoot" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(6)">
+      <img src="images/commercial/commercial-video-production-director-cast-outdoor-field-shoot-niagara.webp" alt="Director reviewing shot on tablet with costumed cast in an outdoor field" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(7)">
+      <img src="images/commercial/commercial-video-production-white-cyclorama-studio-shoot-ontario.webp" alt="Production crew filming talent on a white cyclorama with jib arm in a professional studio" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item tall" onclick="openLb(8)">
+      <img src="images/commercial/cinematographer-steadicam-rig-outdoor-commercial-shoot-niagara.webp" alt="Cinematographer operating a steadicam rig with cinema camera on an outdoor commercial production" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(9)">
+      <img src="images/commercial/commercial-video-production-studio-interview-shoot-niagara.webp" alt="Camera operator filming an interview subject in a studio set" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(10)">
+      <img src="images/commercial/commercial-video-production-car-mount-camera-setup-ontario.webp" alt="Crew member mounting a cinema camera to a vehicle roof for a dynamic commercial shoot" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(11)">
+      <img src="images/commercial/red-digital-cinema-camera-gimbal-commercial-video-production-niagara.webp" alt="RED Digital Cinema camera on a gimbal rig held by a cinematographer" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+    <div class="masonry-item wide" onclick="openLb(12)">
+      <img src="images/commercial/commercial-video-production-drone-operator-niagara.webp" alt="Crew member preparing a DJI drone for aerial filming on a commercial production" loading="lazy" />
+      <div class="masonry-overlay"><div class="masonry-expand"></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLb()">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()">✕</button>
+    <button class="lb-nav lb-prev" onclick="navLb(-1)">‹</button>
+    <button class="lb-nav lb-next" onclick="navLb(1)">›</button>
+    <img class="lb-img" id="lbImg" src="" alt="" />
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+</div>
+
+<!-- SERVICE AREAS -->
+<section class="c-areas">
+  <p class="c-areas-eyebrow">Commercial video production serving</p>
+  <p class="c-areas-list">
+    <a href="service-areas/st-catharines.html">St. Catharines</a><span class="areas-sep">·</span>
+    <a href="service-areas/niagara-falls.html">Niagara Falls</a><span class="areas-sep">·</span>
+    <a href="service-areas/niagara-on-the-lake.html">Niagara-on-the-Lake</a><span class="areas-sep">·</span>
+    <a href="service-areas/welland.html">Welland</a><span class="areas-sep">·</span>
+    <a href="service-areas/thorold.html">Thorold</a><span class="areas-sep">·</span>
+    <a href="service-areas/west-lincoln.html">West Lincoln</a><span class="areas-sep">·</span>
+    <a href="service-areas/grimsby.html">Grimsby</a><span class="areas-sep">·</span>
+    <a href="service-areas/hamilton.html">Hamilton</a><span class="areas-sep">·</span>
+    <a href="service-areas/burlington.html">Burlington</a><span class="areas-sep">·</span>
+    <a href="service-areas/oakville.html">Oakville</a><span class="areas-sep">·</span>
+    <a href="service-areas/mississauga.html">Mississauga</a><span class="areas-sep">·</span>
+    <a href="service-areas/toronto.html">Toronto</a><span class="areas-sep">·</span>
+    <a href="service-areas/brampton.html">Brampton</a><span class="areas-sep">·</span>
+    <a href="service-areas/vaughan.html">Vaughan</a><span class="areas-sep">·</span>
+    <a href="service-areas/gta.html">GTA</a>
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="c-cta">
+  <p class="section-eyebrow">Let's create something</p>
+  <h2>Ready to start your project?</h2>
+  <p>Tell us about your brand, your audience, and your goal. We'll take it from there.</p>
+  <a href="contact.html" class="btn-dark">Start a Conversation</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <a href="index.html" class="footer-logo">Captivate Photo + Cinema</a>
+    <div class="footer-badges">
+      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener"><span class="stars">★★★★★</span><span>Google Reviews</span></a>
+      <a class="badge" href="https://www.ccaward.com/award-winners/niagara-region/best-video-production-company/captivate-photocinema/" target="_blank" rel="noopener">Consumer Choice Award</a>
+      <a class="badge" href="https://threebestrated.ca/wedding-photographers-in-st-catharines-on" target="_blank" rel="noopener">Three Best Rated 2026</a>
+    </div>
+  </div>
+  <div class="footer-areas">Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA</div>
+  <div class="footer-bottom">
+    <span>St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
+    <span>© 2026 Captivate Photo + Cinema. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  const imgs = Array.from(document.querySelectorAll('.masonry-item img'));
+  let current = 0;
+
+  function openLb(idx) {
+    current = idx;
+    updateLb();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navLb(dir) {
+    current = (current + dir + imgs.length) % imgs.length;
+    updateLb();
+  }
+
+  function updateLb() {
+    const img = imgs[current];
+    document.getElementById('lbImg').src = img.src;
+    document.getElementById('lbImg').alt = img.alt;
+    document.getElementById('lbCounter').textContent = `${current + 1} / ${imgs.length}`;
+  }
+
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') navLb(1);
+    if (e.key === 'ArrowLeft') navLb(-1);
+  });
+</script>
+
+</body>
+</html>
