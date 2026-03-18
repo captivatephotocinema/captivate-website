@@ -36,7 +36,12 @@
     .p-main-stats { padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-content: center; }
     .p-stat-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 0.2rem; }
     .p-stat-value { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-primary); }
-    .p-video-wrap { position: relative; width: 100%; padding-top: 56.25%; background: #0a0a0a; }
+    .p-stat-full { grid-column: span 2; }
+    .p-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.4rem; }
+    .p-tag { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; border: 0.5px solid var(--light-border); padding: 5px 12px; color: var(--text-secondary); background: var(--off-white); transition: border-color 0.2s, color 0.2s; cursor: default; }
+    .p-tag:hover { border-color: var(--mid-border); color: var(--text-primary); }
+    .p-video-wrap-outer { display: flex; justify-content: center; background: #0a0a0a; padding: 2.5rem 3rem; border-top: 0.5px solid #1a1a1a; }
+    .p-video-wrap { position: relative; width: 60%; padding-top: 33.75%; background: #0a0a0a; }
     .p-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
 
     /* BREAKOUT FILMS */
@@ -75,6 +80,8 @@
       .p-hero-content { padding: 0 1.5rem 2.5rem; }
       .p-hero-meta { align-items: flex-start; }
       .p-meta-item { text-align: left; }
+      .p-video-wrap-outer { padding: 1.5rem; }
+      .p-video-wrap { width: 85%; padding-top: 47.8%; }
       .p-main-header { grid-template-columns: 1fr; }
       .p-main-info { border-right: none; border-bottom: 0.5px solid var(--light-border); padding: 2rem 1.5rem; }
       .p-main-stats { padding: 1.5rem; }
@@ -163,22 +170,27 @@
         <div class="p-stat-label">Location</div>
         <div class="p-stat-value">West Lincoln, ON</div>
       </div>
-      <div>
+      <div class="p-stat-full">
         <div class="p-stat-label">Services</div>
-        <div class="p-stat-value">Cinematography · Drone · Edit</div>
-      </div>
-      <div>
-        <div class="p-stat-label">Deliverables</div>
-        <div class="p-stat-value">5 Films</div>
+        <div class="p-tags">
+          <span class="p-tag">Writing</span>
+          <span class="p-tag">Storyboarding</span>
+          <span class="p-tag">Casting</span>
+          <span class="p-tag">Cinematography</span>
+          <span class="p-tag">Drone</span>
+          <span class="p-tag">Post-Production</span>
+        </div>
       </div>
     </div>
   </div>
+  <div class="p-video-wrap-outer">
   <div class="p-video-wrap">
     <iframe
       src="https://iframe.videodelivery.net/e4f26a58983b52268e7df3e5ed104604"
       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
       allowfullscreen>
     </iframe>
+  </div>
   </div>
 </section>
 
@@ -250,12 +262,14 @@
       <div class="p-bts-tag">Captivate Photo+Cinema</div>
     </div>
   </div>
+  <div class="p-video-wrap-outer">
   <div class="p-video-wrap">
     <iframe
       src="https://iframe.videodelivery.net/4e6ec1d8a6061fc941b0a13e8543dc45"
       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
       allowfullscreen loading="lazy">
     </iframe>
+  </div>
   </div>
 </section>
 
