@@ -10,12 +10,12 @@
   <style>
 
     /* ── HERO ── */
-    .w-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; border-bottom: 0.5px solid var(--light-border); }
+    .w-hero { display: grid; grid-template-columns: 1fr 1fr; height: calc(100vh - 65px); max-height: 580px; min-height: 360px; border-bottom: 0.5px solid var(--light-border); }
     .w-hero-img { overflow: hidden; position: relative; }
     .w-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .w-hero-text { padding: 4.5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; border-left: 0.5px solid var(--light-border); }
-    .w-hero-text h1 { font-size: clamp(32px, 3.5vw, 46px); line-height: 1.05; margin-bottom: 0.5rem; }
-    .w-hero-text h2 { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.06em; text-transform: none; color: var(--text-secondary); margin-bottom: 2rem; }
+    .w-hero-text { padding: 2.5rem 3rem; display: flex; flex-direction: column; justify-content: center; border-left: 0.5px solid var(--light-border); gap: 0.35rem; }
+    .w-hero-text h1 { font-size: clamp(28px, 3vw, 42px); line-height: 1.05; margin-bottom: 0.25rem; }
+    .w-hero-text h2 { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.06em; text-transform: none; color: var(--text-secondary); margin-bottom: 1.25rem; }
 
     /* ── COPY ── */
     .w-copy { padding: 4rem 3.5rem; max-width: 680px; border-bottom: 0.5px solid var(--light-border); }
@@ -205,7 +205,7 @@
       To swap this video later, replace the ID in both the src URL and the stream src attribute.
     -->
     <iframe
-      src="https://iframe.videodelivery.net/c638cb4584989cecd3e7493ea3bdeec2?poster=https%3A%2F%2Fvideodelivery.net%2Fc638cb4584989cecd3e7493ea3bdeec2%2Fthumbnails%2Fthumbnail.jpg"
+      src="https://iframe.videodelivery.net/c638cb4584989cecd3e7493ea3bdeec2?autoplay=true&muted=true&loop=true&controls=false&poster=https%3A%2F%2Fvideodelivery.net%2Fc638cb4584989cecd3e7493ea3bdeec2%2Fthumbnails%2Fthumbnail.jpg"
       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
       allowfullscreen>
     </iframe>
