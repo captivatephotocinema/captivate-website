@@ -84,18 +84,43 @@
 
   <div class="port-item">
     <img class="port-thumb"
-         src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/e4f26a58983b52268e7df3e5ed104604/thumbnails/thumbnail.jpg"
+         src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/e4f26a58983b52268e7df3e5ed104604/thumbnails/thumbnail.jpg?time=3m23s"
          alt="West Lincoln Municipal Brand Film — Captivate Photo+Cinema" />
     <span class="port-badge">Commercial · Corporate</span>
     <div class="port-hover">
       <div class="port-hover-tag">Township of West Lincoln</div>
       <div class="port-hover-title">West Lincoln</div>
       <button class="port-btn port-btn-film" onclick="openFilm('e4f26a58983b52268e7df3e5ed104604','West Lincoln','Municipal Brand Film','projects/west-lincoln.html')">&#9654;&nbsp; View Film</button>
-      <a class="port-btn port-btn-bts" href="projects/west-lincoln.html">Behind the Scenes</a>
+      <a class="port-btn port-btn-bts" href="projects/west-lincoln.html">Project Details</a>
     </div>
   </div>
 
-  <div class="port-more">
+
+  <div class="port-item">
+    <img class="port-thumb"
+         src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/9fe3336b21e6132247c2d3ac04b2d2c8/thumbnails/thumbnail.jpg?time=3m5s"
+         alt="Cheekbone Beauty — Captivate Photo+Cinema" />
+    <span class="port-badge">Commercial</span>
+    <div class="port-hover">
+      <div class="port-hover-tag">Cheekbone Beauty</div>
+      <div class="port-hover-title">Cheekbone</div>
+      <button class="port-btn port-btn-film" onclick="openFilm('9fe3336b21e6132247c2d3ac04b2d2c8','Cheekbone','Commercial Film','')">&#9654;&nbsp; View Film</button>
+    </div>
+  </div>
+
+  <div class="port-item">
+    <img class="port-thumb"
+         src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/48468f8686ebbd34bbc6f9a8936c9b5e/thumbnails/thumbnail.jpg?time=1m56s"
+         alt="Wellesley Firefighter Recruitment Film — Captivate Photo+Cinema" />
+    <span class="port-badge">Commercial</span>
+    <div class="port-hover">
+      <div class="port-hover-tag">Township of Wellesley</div>
+      <div class="port-hover-title">Wellesley Firefighter</div>
+      <button class="port-btn port-btn-film" onclick="openFilm('48468f8686ebbd34bbc6f9a8936c9b5e','Wellesley Firefighter Recruitment Film','Recruitment Film','')">&#9654;&nbsp; View Film</button>
+    </div>
+  </div>
+
+    <div class="port-more">
     <div class="port-more-inner">
       <p>More projects coming soon<br>— check back shortly</p>
     </div>
@@ -114,7 +139,7 @@
         <div class="lb-title" id="lb-title"></div>
         <div class="lb-sub" id="lb-sub"></div>
       </div>
-      <a class="lb-project-btn" id="lb-project-link" href="#">View Full Project &amp; Behind the Scenes &#8594;</a>
+      <a class="lb-project-btn" id="lb-project-link" href="#">View Full Project &amp; Details &#8594;</a>
     </div>
   </div>
 </div>
@@ -144,10 +169,16 @@
 
 <script>
   function openFilm(id, title, sub, projectUrl) {
-    document.getElementById('lb-iframe').src = 'https://iframe.videodelivery.net/' + id + '?autoplay=true';
+    document.getElementById('lb-iframe').src = 'https://customer-g1088tnr06o82bqj.cloudflarestream.com/' + id + '/iframe?autoplay=true';
     document.getElementById('lb-title').textContent = title;
     document.getElementById('lb-sub').textContent = sub;
-    document.getElementById('lb-project-link').href = projectUrl;
+    var projBtn = document.getElementById('lb-project-link');
+    if (projectUrl) {
+      projBtn.href = projectUrl;
+      projBtn.style.display = '';
+    } else {
+      projBtn.style.display = 'none';
+    }
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
   }

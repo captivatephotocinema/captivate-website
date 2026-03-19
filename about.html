@@ -96,42 +96,6 @@
       color: rgba(255,255,255,0.88);
     }
 
-    /* ── PHOTO GRID ── */
-    .photo-section {
-      padding: 3.5rem 3rem;
-      border-bottom: 0.5px solid var(--light-border);
-    }
-
-    .photo-section .section-eyebrow { margin-bottom: 1.5rem; }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    .photo-grid img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-grid .img-ph {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: var(--off-white);
-      border: 0.5px solid var(--light-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      font-family: 'Montserrat', sans-serif;
-    }
-
     /* ── CREDENTIALS ── */
     .credentials {
       display: grid;
@@ -170,70 +134,45 @@
       line-height: 1.7;
     }
 
-    /* ── GEAR ── */
-    .gear-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-bottom: 0.5px solid var(--light-border);
-    }
-
-    .gear-text {
-      padding: 3.5rem 3rem;
-      border-right: 0.5px solid var(--light-border);
-    }
-
-    .gear-text h2 { font-size: 28px; margin-bottom: 1.25rem; }
-
-    .gear-text p { font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
-
-    .gear-list {
-      margin-top: 1.5rem;
-      list-style: none;
-    }
-
-    .gear-list li {
-      font-size: 12px;
-      color: var(--text-secondary);
-      padding: 0.6rem 0;
-      border-bottom: 0.5px solid var(--light-border);
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .gear-list li:last-child { border-bottom: none; }
-
-    .gear-list li span {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      opacity: 0.6;
-    }
-
-    .gear-img {
-      background: var(--off-white);
+    /* ── QUOTE ── */
+    .about-quote {
+      position: relative;
+      min-height: 420px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 300px;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
     }
-
-    /* ── CTA ── */
-    .about-cta {
-      padding: 4.5rem 3rem;
+    .about-quote-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      transform: scale(1.03);
+    }
+    .about-quote-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .about-quote-content {
+      position: relative;
+      z-index: 2;
+      padding: 3rem;
       text-align: center;
-      background: var(--off-white);
+      max-width: 700px;
     }
-
-    .about-cta h2 { font-size: 38px; margin-bottom: 0.85rem; }
-    .about-cta p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2rem; }
-    .about-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .about-quote-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+      line-height: 1.2;
+      margin: 0;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -241,14 +180,11 @@
       .about-hero-img { min-height: 320px; }
       .about-hero-text { padding: 2.5rem 1.5rem; border-left: none; border-top: 0.5px solid var(--light-border); }
       .philosophy { padding: 2.5rem 1.5rem; }
-      .photo-section { padding: 2.5rem 1.5rem; }
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
       .credentials { grid-template-columns: 1fr; }
       .cred { border-right: none; border-bottom: 0.5px solid var(--light-border); }
       .cred:last-child { border-bottom: none; }
-      .gear-section { grid-template-columns: 1fr; }
-      .gear-text { padding: 2.5rem 1.5rem; border-right: none; border-bottom: 0.5px solid var(--light-border); }
-      .about-cta { padding: 3rem 1.5rem; }
+      .about-quote { min-height: 300px; }
+      .about-quote-content { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
@@ -284,8 +220,8 @@
   <div class="about-hero-text">
     <p class="section-eyebrow">Meet the founder</p>
     <h1>All About Adam</h1>
-    <p>My name is <strong>Adam Stephenson</strong> and I am the proud owner of Captivate.</p>
-    <p>I've spent <strong>20+ years</strong> making movies, writing scripts, and filming both created and candid scenes. My trick for success has been surrounding myself with talented and like-minded people.</p>
+    <p>My name is Adam Stephenson and I am the proud owner of Captivate.</p>
+    <p>I've spent 20+ years making movies, writing scripts, and filming both created and candid scenes. My trick for success has been surrounding myself with talented and like-minded people.</p>
     <p>It takes a solid team to make a great film. I learned this many years ago and continue to apply this philosophy in all of my filmmaking practices.</p>
     <p>My love of narrative storytelling has kept me active in the Niagara Region where I am firmly rooted — with an amazing family and of course, talented colleagues.</p>
   </div>
@@ -299,19 +235,6 @@
 </section>
 
 <!-- PHOTO GRID -->
-<section class="photo-section">
-  <p class="section-eyebrow">Behind the lens</p>
-  <div class="photo-grid">
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589427_0x500.jpg" alt="Corporate video production St. Catharines" />
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589429_0x500.jpg" alt="Commercial video production Niagara" />
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589430_0x500.jpg" alt="Wedding photography St. Catharines" />
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589433_0x500.jpg" alt="Wedding videography Niagara" />
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589434_0x500.jpg" alt="Corporate production St. Catharines" />
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/2589431_0x500.jpg" alt="Captivate Photo Cinema production" />
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/3130693_0x500.jpg" alt="On set – Captivate Photo+Cinema" />
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/0x500/3130692_0x500.jpg" alt="Film production Niagara Region" />
-  </div>
-</section>
 
 <!-- CREDENTIALS -->
 <section class="credentials">
@@ -332,35 +255,13 @@
   </div>
 </section>
 
-<!-- GEAR SECTION -->
-<section class="gear-section">
-  <div class="gear-text">
-    <p class="section-eyebrow">The toolkit</p>
-    <h2>Cinema-Grade Equipment</h2>
-    <p>Every project is shot with professional Sony cinema and mirrorless bodies, paired with quality glass and lighting — ensuring your final product looks exactly as premium as it should.</p>
-    <ul class="gear-list">
-      <li>Sony FX3 <span>Cinema body</span></li>
-      <li>Sony A7S III <span>Video specialist</span></li>
-      <li>Sony A7R V <span>Photo / occasional video</span></li>
-      <li>Sony A7S II <span>Legacy / B-cam</span></li>
-      <li>Licensed drone platform <span>Aerial cinematography</span></li>
-      <li>DaVinci Resolve Studio <span>Post production</span></li>
-    </ul>
-  </div>
-  <div class="gear-img">
-    <!-- Replace with a gear/studio photo -->
-    Photo: Adam on set
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="about-cta">
-  <p class="section-eyebrow">Let's create something together</p>
-  <h2>I'm living my best life doing what I love.</h2>
-  <p>Whether it's your wedding day, a brand campaign, or a corporate production — let's talk about your project.</p>
-  <div class="about-cta-btns">
-    <a href="contact.html" class="btn-dark">Get In Touch</a>
-    <a href="portfolio.html" class="btn-outline">View Our Work</a>
+<!-- QUOTE / FAMILY PHOTO -->
+<section class="about-quote">
+  <div class="about-quote-bg" style="background-image: url('images/about/adam-stephenson-family-photo-st-catharines.webp');"></div>
+  <div class="about-quote-overlay"></div>
+  <div class="about-quote-content">
+    <blockquote class="about-quote-text">"I'm living my best life doing what I love."</blockquote>
   </div>
 </section>
 
