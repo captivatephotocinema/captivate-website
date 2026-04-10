@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Video Production St. Catharines, ON | Captivate Photo+Cinema</title>
+  <meta name="description" content="Corporate video production in St. Catharines — live events, recruitment films, training videos, and same-day edits across Niagara, Hamilton, and the GTA." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cs-wrap { background: #080808; min-height: 100vh; display: flex; flex-direction: column; }
+    .cs-main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 2rem; text-align: center; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+    .cs-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-family: 'Montserrat', sans-serif; margin-bottom: 1.5rem; }
+    .cs-h1 { font-family: 'Oswald', sans-serif; font-size: clamp(40px, 6vw, 72px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; line-height: 1.0; margin-bottom: 1.5rem; }
+    .cs-h1 em { font-style: italic; color: rgba(255,255,255,0.4); }
+    .cs-desc { font-size: 14px; color: rgba(255,255,255,0.45); font-family: 'Montserrat', sans-serif; line-height: 1.85; max-width: 480px; margin: 0 auto 2.5rem; }
+    .cs-divider { width: 40px; height: 0.5px; background: rgba(255,255,255,0.15); margin: 0 auto 2.5rem; }
+    .cs-contact { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2.5rem; }
+    .cs-contact a { font-size: 13px; color: rgba(255,255,255,0.55); font-family: 'Montserrat', sans-serif; text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+    .cs-contact a:hover { color: #fff; }
+    .cs-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cs-btn-w { background: #fff; color: #080808; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; padding: 12px 28px; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+    .cs-btn-w:hover { opacity: 0.85; }
+    .cs-btn-g { background: transparent; color: rgba(255,255,255,0.6); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; padding: 12px 28px; border: 0.5px solid rgba(255,255,255,0.2); cursor: pointer; font-family: 'Montserrat', sans-serif; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+    .cs-btn-g:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+    .cs-services { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.5px solid rgba(255,255,255,0.08); }
+    .cs-svc { padding: 1.75rem 1.5rem; border-right: 0.5px solid rgba(255,255,255,0.08); }
+    .cs-svc:last-child { border-right: none; }
+    .cs-svc-num { font-size: 9px; letter-spacing: 0.2em; color: rgba(255,255,255,0.2); font-family: 'Montserrat', sans-serif; margin-bottom: 0.6rem; }
+    .cs-svc-name { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.7); margin-bottom: 0.4rem; }
+    .cs-svc-desc { font-size: 11px; color: rgba(255,255,255,0.3); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
+    .cs-footer { padding: 1.5rem 3rem; border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; background: #080808; }
+    .cs-footer-logo { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .cs-footer-links { display: flex; gap: 20px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
+    .cs-footer-links a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .cs-footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 700px) {
+      .cs-services { grid-template-columns: 1fr 1fr; }
+      .cs-svc:nth-child(2) { border-right: none; }
+      .cs-svc:nth-child(3), .cs-svc:nth-child(4) { border-top: 0.5px solid rgba(255,255,255,0.08); }
+      .cs-footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Captivate<span>Photo + Cinema</span></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="#">Services</a>
+      <ul class="dropdown">
+        <li><a href="services-commercial.html">Commercial</a></li>
+        <li><a href="services-corporate.html">Corporate</a></li>
+        <li><a href="services-wedding.html">Wedding</a></li>
+        <li><a href="services-drone.html">Drone &amp; Aerial</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="service-areas.html">Service Areas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Inquire Now</a>
+</nav>
+
+<div class="cs-wrap">
+  <div class="cs-main">
+    <p class="cs-eyebrow">Corporate Video Production · St. Catharines, ON</p>
+    <h1 class="cs-h1">Corporate<br><em>Coming Soon</em></h1>
+    <div class="cs-divider"></div>
+    <p class="cs-desc">We're putting the finishing touches on our corporate page. In the meantime — if you have a live event, recruitment film, training video, or same-day edit in mind, we'd love to hear from you.</p>
+    <div class="cs-contact">
+      <a href="tel:2896682780">(289) 668-2780</a>
+      <a href="mailto:info@captivatephotocinema.ca">info@captivatephotocinema.ca</a>
+    </div>
+    <div class="cs-btns">
+      <a href="contact.html" class="cs-btn-w">Get In Touch</a>
+      <a href="portfolio.html" class="cs-btn-g">View Our Work</a>
+    </div>
+  </div>
+  <div class="cs-services">
+    <div class="cs-svc">
+      <div class="cs-svc-num">01</div>
+      <div class="cs-svc-name">Live Events</div>
+      <div class="cs-svc-desc">Conferences, galas, and corporate gatherings captured seamlessly.</div>
+    </div>
+    <div class="cs-svc">
+      <div class="cs-svc-num">02</div>
+      <div class="cs-svc-name">Recruitment Films</div>
+      <div class="cs-svc-desc">Showcase your culture and attract the right people to your team.</div>
+    </div>
+    <div class="cs-svc">
+      <div class="cs-svc-num">03</div>
+      <div class="cs-svc-name">Training Videos</div>
+      <div class="cs-svc-desc">Process films and instructional content for your team or clients.</div>
+    </div>
+    <div class="cs-svc">
+      <div class="cs-svc-num">04</div>
+      <div class="cs-svc-name">Same-Day Edits</div>
+      <div class="cs-svc-desc">A highlight film ready to play before your event wraps up.</div>
+    </div>
+  </div>
+  <footer class="cs-footer">
+    <a href="index.html" class="cs-footer-logo">Captivate Photo + Cinema</a>
+    <div class="cs-footer-links">
+      <a href="services-commercial.html">Commercial</a>
+      <a href="services-wedding.html">Wedding</a>
+      <a href="services-drone.html">Drone</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
