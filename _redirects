@@ -1,0 +1,59 @@
+# Netlify _redirects
+# Maps all old Webware/captivatephotocinema.ca URLs to new site equivalents
+# Format: /old-path  /new-path  301
+
+# ── CORE PAGES ──
+/pages/contact-photographers-videographers-st-catharines-on    /contact.html    301
+/pages/about-adam-stephenson-photographer-videographer-st-catharines    /about.html    301
+/pages/st-catharines-video-production-testimonials    /testimonials.html    301
+
+# ── SERVICE PAGES ──
+/pages/services    /services-wedding.html    301
+/pages/services/st-catharines-wedding-photography-videography-services    /services-wedding.html    301
+/pages/services/st-catharines-commercial-photography-videography-services    /services-commercial.html    301
+/pages/services/st-catharines-corporate-video-production    /services-corporate.html    301
+/pages/services/st-catharines-drone-services    /services-drone.html    301
+/pages/services/st-catharines-aerial-photography-services    /services-drone.html    301
+
+# ── SERVICE AREAS ──
+/pages/service-areas    /service-areas.html    301
+/pages/service-areas/photographers-videographers-st-catharines-on    /service-areas/st-catharines.html    301
+/pages/service-areas/photographers-videographers-niagara-falls-on    /service-areas/niagara-falls.html    301
+/pages/service-areas/photographers-videographers-niagara-on-the-lake    /service-areas/niagara-on-the-lake.html    301
+/pages/service-areas/photographers-videographers-welland-on    /service-areas/welland.html    301
+/pages/service-areas/photographers-videographers-thorold-on    /service-areas/thorold.html    301
+/pages/service-areas/photographers-videographers-port-colborne-on    /service-areas/port-colborne.html    301
+/pages/service-areas/photographers-videographers-pelham-on    /service-areas/pelham.html    301
+/pages/service-areas/photographers-videographers-lincoln-on    /service-areas/lincoln.html    301
+/pages/service-areas/photographers-videographers-west-lincoln-on    /service-areas/west-lincoln.html    301
+/pages/service-areas/photographers-videographers-grimsby-on    /service-areas/grimsby.html    301
+/pages/service-areas/photographers-videographers-stoney-creek-on    /service-areas/stoney-creek.html    301
+/pages/service-areas/photographers-videographers-hamilton-on    /service-areas/hamilton.html    301
+/pages/service-areas/photographers-videographers-ancaster-on    /service-areas/ancaster.html    301
+/pages/service-areas/photographers-videographers-burlington-on    /service-areas/burlington.html    301
+/pages/service-areas/photographers-videographers-oakville-on    /service-areas/oakville.html    301
+/pages/service-areas/photographers-videographers-mississauga-on    /service-areas/mississauga.html    301
+/pages/service-areas/photographers-videographers-toronto-on    /service-areas/toronto.html    301
+/pages/service-areas/photographers-videographers-brampton-on    /service-areas/brampton.html    301
+/pages/service-areas/photographers-videographers-vaughan-on    /service-areas/vaughan.html    301
+/pages/service-areas/photographers-videographers-newmarket-on    /service-areas/newmarket.html    301
+/pages/service-areas/photographers-videographers-gta-on    /service-areas/gta.html    301
+
+# ── BLOG ──
+/blogs/st-catharines-video-production-company-blog    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1467387-south-niagara-hospital-milestone    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1466018-third-carbon-monoxide-mini-psa-the-silent-killer    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1464672-how-to-choose-a-videographer-who-matches-your-wedding-vision    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1461413-second-carbon-monoxide-mini-psa    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1458806-new-carbon-monoxide-rules-for-ontario-mini-psa    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1457937-captivate-wins-consumer-choice-awards-for-3rd-year-in-a-row    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1451962-5-costly-mistakes-to-avoid-when-hiring-a-wedding-videographer    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1451893-private-markets-forum-institutional-connect    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1440302-how-to-plan-a-stress-free-wedding-photoshoot-expert-tips-inside    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1427655-how-to-choose-the-right-photographer-for-your-corporate-event    /blog.html    301
+/blogs/st-catharines-video-production-company-blog/1395657-discover-west-lincoln    /projects/west-lincoln.html    301
+
+# ── CATCH-ALL ──
+# Any /pages/* not caught above → homepage
+/pages/*    /    301
+/blogs/*    /blog.html    301
