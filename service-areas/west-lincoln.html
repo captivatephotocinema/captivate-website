@@ -2,241 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Production West Lincoln | Captivate Photo+Cinema – Niagara Region</title>
-  <meta name="description" content="Photo and video production services in West Lincoln and the Niagara Region. Commercial, wedding, corporate, and drone services from Captivate Photo+Cinema." />
+  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
+  <title>West Lincoln — Municipal Brand Film | Captivate Photo+Cinema</title>
+  <meta name="description" content="A multi-film brand campaign for the Township of West Lincoln. Agriculture, growth, community — captured by Captivate Photo+Cinema, St. Catharines." />
   <link rel="stylesheet" href="../style.css" />
   <style>
-    /* ── PAGE HERO ── */
-    .area-hero {
-      background: var(--black);
-      padding: 5rem 3rem 4rem;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 0.5px solid var(--light-border);
-    }
 
-    .area-hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 640px;
-    }
+    /* HERO */
+    .p-hero { position: relative; background: #080808; overflow: hidden; min-height: 480px; display: flex; align-items: flex-end; border-bottom: 0.5px solid #222; }
+    .p-hero-thumb { position: absolute; inset: 0; }
+    .p-hero-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.45; display: block; }
+    .p-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.15) 70%); }
+    .p-hero-content { position: relative; z-index: 2; padding: 0 3rem 3.5rem; width: 100%; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; }
+    .p-hero-left { }
+    .p-breadcrumb { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.85rem; font-family: 'Montserrat', sans-serif; }
+    .p-breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .p-breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .p-breadcrumb span { margin: 0 0.5rem; opacity: 0.4; }
+    .p-hero h1 { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: clamp(36px, 5vw, 64px); line-height: 0.95; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    .p-hero-sub { font-size: 13px; color: rgba(255,255,255,0.55); font-family: 'Montserrat', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+    .p-hero-meta { display: flex; flex-direction: column; gap: 1rem; align-items: flex-end; }
+    .p-meta-item { text-align: right; }
+    .p-meta-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); font-family: 'Montserrat', sans-serif; margin-bottom: 0.2rem; }
+    .p-meta-value { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 300; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.75); }
 
-    .area-hero .section-eyebrow { color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
+    /* MAIN FILM */
+    .p-main { border-bottom: 0.5px solid var(--light-border); }
+    .p-main-header { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--light-border); }
+    .p-main-info { padding: 2.5rem 3rem; border-right: 0.5px solid var(--light-border); }
+    .p-main-info h2 { font-size: 26px; margin-bottom: 0.5rem; }
+    .p-main-info p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.75; max-width: 420px; }
+    .p-main-stats { padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-content: center; }
+    .p-stat-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; margin-bottom: 0.2rem; }
+    .p-stat-value { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-primary); }
+    .p-stat-full { grid-column: span 2; }
+    .p-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.4rem; }
+    .p-tag { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; border: 0.5px solid var(--light-border); padding: 5px 12px; color: var(--text-secondary); background: var(--off-white); transition: border-color 0.2s, color 0.2s; cursor: default; }
+    .p-tag:hover { border-color: var(--mid-border); color: var(--text-primary); }
+    .p-video-wrap-outer { display: flex; justify-content: center; background: #0a0a0a; padding: 2.5rem 3rem; border-top: 0.5px solid #1a1a1a; }
+    .p-video-wrap { position: relative; width: 60%; padding-top: 33.75%; background: #0a0a0a; }
+    .p-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
 
-    .area-hero h1 {
-      font-size: clamp(36px, 5vw, 60px);
-      color: var(--white);
-      line-height: 1.0;
-      margin-bottom: 1.25rem;
-    }
+    /* BREAKOUT FILMS */
+    .p-breakout { border-bottom: 0.5px solid var(--light-border); }
+    .p-breakout-header { padding: 2.5rem 3rem 2rem; border-bottom: 0.5px solid var(--light-border); }
+    .p-breakout-header h2 { font-size: 22px; margin-bottom: 0.35rem; }
+    .p-breakout-header p { font-size: 13px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.7; }
+    .p-breakout-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: none; }
+    .p-film-card { border-right: 0.5px solid var(--light-border); }
+    .p-film-card:last-child { border-right: none; }
+    .p-film-embed { position: relative; width: 100%; padding-top: 56.25%; background: #0a0a0a; }
+    .p-film-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .p-film-info { padding: 1.25rem 1.5rem 1.75rem; border-top: 0.5px solid var(--light-border); }
+    .p-film-name { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+    .p-film-desc { font-size: 12px; color: var(--text-secondary); font-family: 'Montserrat', sans-serif; line-height: 1.65; }
 
-    .area-hero-sub {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.8;
-      max-width: 500px;
-      margin-bottom: 2rem;
-    }
+    /* BTS FILM */
+    .p-bts { background: var(--black); border-bottom: 0.5px solid #222; }
+    .p-bts-header { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+    .p-bts-info { padding: 2.5rem 3rem; border-right: 0.5px solid rgba(255,255,255,0.08); }
+    .p-bts-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.6rem; font-family: 'Montserrat', sans-serif; }
+    .p-bts-title { font-family: 'Oswald', sans-serif; font-size: clamp(20px, 2.5vw, 28px); font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin-bottom: 0.6rem; }
+    .p-bts-desc { font-size: 13px; color: rgba(255,255,255,0.45); font-family: 'Montserrat', sans-serif; line-height: 1.75; }
+    .p-bts-note { padding: 2.5rem 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
+    .p-bts-tag { display: inline-block; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); border: 0.5px solid rgba(255,255,255,0.15); padding: 6px 12px; font-family: 'Montserrat', sans-serif; width: fit-content; }
 
-    /* ── INTRO SPLIT ── */
-    .area-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-bottom: 0.5px solid var(--light-border);
-    }
+    /* NAV STRIP */
+    .p-nav-strip { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--light-border); flex-wrap: wrap; gap: 1rem; }
+    .p-nav-back { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; font-family: 'Montserrat', sans-serif; transition: color 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .p-nav-back:hover { color: var(--text-primary); }
+    .p-nav-cta { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-family: 'Montserrat', sans-serif; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .p-nav-cta:hover { color: var(--text-primary); }
 
-    .area-intro-text {
-      padding: 3.5rem 3rem;
-      border-right: 0.5px solid var(--light-border);
-    }
-
-    .area-intro-text h2 { font-size: 28px; margin-bottom: 1.25rem; }
-    .area-intro-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
-
-    .area-intro-img {
-      overflow: hidden;
-      min-height: 320px;
-    }
-
-    .area-intro-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .area-intro-img .img-ph {
-      width: 100%;
-      height: 100%;
-      min-height: 320px;
-      background: var(--off-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* ── SERVICES OFFERED ── */
-    .services-offered {
-      padding: 3.5rem 3rem;
-      border-bottom: 0.5px solid var(--light-border);
-    }
-
-    .services-offered h2 { font-size: 26px; margin-bottom: 2rem; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--light-border);
-      border: 0.5px solid var(--light-border);
-    }
-
-    .service-item {
-      background: var(--white);
-      padding: 1.75rem 1.5rem;
-      transition: background 0.2s;
-    }
-
-    .service-item:hover { background: var(--off-white); }
-
-    .service-item h3 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.5rem;
-    }
-
-    .service-item p {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
-
-    /* ── FEATURED WORK ── */
-    .featured-work {
-      padding: 3.5rem 3rem;
-      border-bottom: 0.5px solid var(--light-border);
-    }
-
-    .featured-work .section-eyebrow { margin-bottom: 0.75rem; }
-    .featured-work h2 { font-size: 26px; margin-bottom: 2rem; }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .work-card {
-      border: 0.5px solid var(--light-border);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: border-color 0.2s;
-    }
-
-    .work-card:hover { border-color: var(--mid-border); }
-
-    .work-card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      display: block;
-    }
-
-    .work-card-img-ph {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--off-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .work-card-body { padding: 1.25rem; }
-
-    .work-card-tag {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 0.4rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .work-card-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 17px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
-    }
-
-    .work-card-desc {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
-
-    /* ── ALL AREAS NAV ── */
-    .all-areas {
-      padding: 3rem 3rem;
-      border-bottom: 0.5px solid var(--light-border);
-      background: var(--off-white);
-    }
-
-    .all-areas h2 { font-size: 20px; margin-bottom: 1.5rem; }
-
-    .areas-list {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 2.4;
-      letter-spacing: 0.05em;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .areas-list a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-    .areas-list a:hover { color: var(--text-primary); }
-    .areas-list a.current { color: var(--text-primary); font-weight: 500; border-bottom: 0.5px solid var(--text-primary); }
-    .areas-sep { margin: 0 0.4rem; opacity: 0.35; }
-
-    /* ── CTA ── */
-    .area-cta {
-      padding: 4rem 3rem;
-      text-align: center;
-    }
-
-    .area-cta h2 { font-size: 34px; margin-bottom: 0.85rem; }
-    .area-cta p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2rem; }
-    .area-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .area-hero { padding: 3.5rem 1.5rem 3rem; }
-      .area-intro { grid-template-columns: 1fr; }
-      .area-intro-text { padding: 2.5rem 1.5rem; border-right: none; border-bottom: 0.5px solid var(--light-border); }
-      .services-offered { padding: 2.5rem 1.5rem; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .featured-work { padding: 2.5rem 1.5rem; }
-      .work-grid { grid-template-columns: 1fr; }
-      .all-areas { padding: 2rem 1.5rem; }
-      .area-cta { padding: 3rem 1.5rem; }
+      .p-hero-content { padding: 0 1.5rem 2.5rem; }
+      .p-hero-meta { align-items: flex-start; }
+      .p-meta-item { text-align: left; }
+      .p-video-wrap-outer { padding: 1.5rem; }
+      .p-video-wrap { width: 85%; padding-top: 47.8%; }
+      .p-main-header { grid-template-columns: 1fr; }
+      .p-main-info { border-right: none; border-bottom: 0.5px solid var(--light-border); padding: 2rem 1.5rem; }
+      .p-main-stats { padding: 1.5rem; }
+      .p-breakout-header { padding: 2rem 1.5rem 1.5rem; }
+      .p-breakout-grid { grid-template-columns: 1fr; }
+      .p-film-card { border-right: none; border-bottom: 0.5px solid var(--light-border); }
+      .p-film-card:last-child { border-bottom: none; }
+      .p-bts-header { grid-template-columns: 1fr; }
+      .p-bts-info { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); padding: 2rem 1.5rem; }
+      .p-bts-note { padding: 1.5rem; }
+      .p-nav-strip { padding: 1.25rem 1.5rem; }
     }
   </style>
 </head>
@@ -248,10 +104,10 @@
   <ul class="nav-links">
     <li class="has-dropdown"><a href="#">Services</a>
       <ul class="dropdown">
-        <li><a href="../services-wedding.html">Wedding</a></li>
         <li><a href="../services-commercial.html">Commercial</a></li>
         <li><a href="../services-corporate.html">Corporate</a></li>
-        <li><a href="../services-drone.html">Drone & Aerial</a></li>
+        <li><a href="../services-wedding.html">Wedding</a></li>
+        <li><a href="../services-drone.html">Drone &amp; Aerial</a></li>
       </ul>
     </li>
     <li><a href="../portfolio.html">Portfolio</a></li>
@@ -264,139 +120,177 @@
 </nav>
 
 <!-- HERO -->
-<section class="area-hero">
-  <div class="area-hero-inner">
-    <p class="section-eyebrow">Service Area &nbsp;·&nbsp; Niagara Region</p>
-    <h1>Video Production<br>West Lincoln</h1>
-    <p class="area-hero-sub">Captivate Photo+Cinema serves West Lincoln and surrounding communities with professional photo and video production — from commercial brand films to weddings and drone cinematography.</p>
-    <a href="../contact.html" class="btn-hero-w" style="font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;background:#fff;color:#0a0a0a;border:none;padding:13px 28px;cursor:pointer;font-weight:400;text-decoration:none;display:inline-block;">Inquire About West Lincoln</a>
+<section class="p-hero">
+  <div class="p-hero-thumb">
+    <img src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/e4f26a58983b52268e7df3e5ed104604/thumbnails/thumbnail.jpg?time=3m23s"
+         alt="West Lincoln Municipal Brand Film — Captivate Photo+Cinema" />
   </div>
-</section>
-
-<!-- INTRO -->
-<section class="area-intro">
-  <div class="area-intro-text">
-    <p class="section-eyebrow">Why West Lincoln</p>
-    <h2>Rooted in the Region</h2>
-    <p>West Lincoln is one of Niagara's best-kept secrets — a thriving agricultural and business community with a growing creative economy. Our team has deep roots here, having produced work with local businesses, the West Lincoln Chamber of Commerce, and community organizations.</p>
-    <p>Whether you're a business in Smithville, a winery along the Twenty Mile Bench, or a couple planning your vineyard wedding — we bring the same cinematic standard to every project, right here in your backyard.</p>
-    <p>We understand West Lincoln's landscape, its character, and its people — and we bring that local knowledge into everything we create.</p>
-  </div>
-  <div class="area-intro-img">
-    <!-- Replace with a West Lincoln area photo -->
-    <img src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/1000x0/3525150_1000x0.jpg" alt="Video production West Lincoln Niagara" />
-  </div>
-</section>
-
-<!-- SERVICES OFFERED -->
-<section class="services-offered">
-  <p class="section-eyebrow">What we offer in West Lincoln</p>
-  <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service-item">
-      <h3>Wedding Photo &amp; Video</h3>
-      <p>Vineyard weddings, barn venues, and intimate ceremonies — captured with a cinematic eye.</p>
+  <div class="p-hero-overlay"></div>
+  <div class="p-hero-content">
+    <div class="p-hero-left">
+      <p class="p-breadcrumb">
+        <a href="../portfolio.html">Portfolio</a>
+        <span>·</span>
+        West Lincoln
+      </p>
+      <h1>West<br>Lincoln</h1>
+      <p class="p-hero-sub">Municipal Brand Campaign</p>
     </div>
-    <div class="service-item">
-      <h3>Commercial Production</h3>
-      <p>Brand films, product shoots, and promotional content for West Lincoln businesses.</p>
-    </div>
-    <div class="service-item">
-      <h3>Corporate Video</h3>
-      <p>Training content, company profiles, and event coverage produced to a professional standard.</p>
-    </div>
-    <div class="service-item">
-      <h3>Drone &amp; Aerial</h3>
-      <p>Licensed aerial cinematography showcasing West Lincoln's farms, landscapes, and venues from above.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED WORK -->
-<section class="featured-work">
-  <p class="section-eyebrow">Our work in the area</p>
-  <h2>Featured Projects</h2>
-  <div class="work-grid">
-
-    <!-- Project 1: Discover West Lincoln -->
-    <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog/1395657-discover-west-lincoln" target="_blank" rel="noopener" class="work-card">
-      <img class="work-card-img" src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24035/media/img/cache/1000x0/3525150_1000x0.jpg" alt="Discover West Lincoln – Captivate Photo+Cinema" />
-      <div class="work-card-body">
-        <p class="work-card-tag">Commercial &nbsp;·&nbsp; 2024</p>
-        <h3 class="work-card-title">Discover West Lincoln</h3>
-        <p class="work-card-desc">A cinematic brand film created with the West Lincoln Chamber of Commerce and local businesses, showcasing the township's people, industry, and character.</p>
+    <div class="p-hero-meta">
+      <div class="p-meta-item">
+        <div class="p-meta-label">Client</div>
+        <div class="p-meta-value">Township of West Lincoln</div>
       </div>
-    </a>
-
-    <!-- Project 2: Placeholder for 2nd WL blog post -->
-    <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog" target="_blank" rel="noopener" class="work-card">
-      <div class="work-card-img-ph">Add 2nd West Lincoln project</div>
-      <div class="work-card-body">
-        <p class="work-card-tag">Add category &nbsp;·&nbsp; Year</p>
-        <h3 class="work-card-title">Project Title Here</h3>
-        <p class="work-card-desc">Add a short description of this West Lincoln project to give visitors context about the work.</p>
+      <div class="p-meta-item">
+        <div class="p-meta-label">Type</div>
+        <div class="p-meta-value">Commercial · Corporate</div>
       </div>
-    </a>
-
-    <!-- Project 3: Placeholder for 3rd WL blog post -->
-    <a href="https://www.captivatephotocinema.ca/blogs/st-catharines-video-production-company-blog" target="_blank" rel="noopener" class="work-card">
-      <div class="work-card-img-ph">Add 3rd West Lincoln project</div>
-      <div class="work-card-body">
-        <p class="work-card-tag">Add category &nbsp;·&nbsp; Year</p>
-        <h3 class="work-card-title">Project Title Here</h3>
-        <p class="work-card-desc">Add a short description of this West Lincoln project to give visitors context about the work.</p>
+      <div class="p-meta-item">
+        <div class="p-meta-label">Region</div>
+        <div class="p-meta-value">Niagara, Ontario</div>
       </div>
-    </a>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN FILM -->
+<section class="p-main">
+  <div class="p-main-header">
+    <div class="p-main-info">
+      <p class="section-eyebrow">Main Film</p>
+      <h2>The West Lincoln Story</h2>
+      <p>A cinematic brand film for the Township of West Lincoln — capturing the character, community, and quiet ambition of one of Niagara's most distinct municipalities.</p>
+    </div>
+    <div class="p-main-stats">
+      <div>
+        <div class="p-stat-label">Production</div>
+        <div class="p-stat-value">Captivate Photo+Cinema</div>
+      </div>
+      <div>
+        <div class="p-stat-label">Location</div>
+        <div class="p-stat-value">West Lincoln, ON</div>
+      </div>
+      <div class="p-stat-full">
+        <div class="p-stat-label">Services</div>
+        <div class="p-tags">
+          <span class="p-tag">Writing</span>
+          <span class="p-tag">Storyboarding</span>
+          <span class="p-tag">Casting</span>
+          <span class="p-tag">Cinematography</span>
+          <span class="p-tag">Drone</span>
+          <span class="p-tag">Post-Production</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-video-wrap-outer">
+  <div class="p-video-wrap">
+    <iframe
+      src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/e4f26a58983b52268e7df3e5ed104604/iframe?poster=https://customer-g1088tnr06o82bqj.cloudflarestream.com/e4f26a58983b52268e7df3e5ed104604/thumbnails/thumbnail.jpg?time=3m23s"
+      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  </div>
+</section>
+
+<!-- BREAKOUT FILMS -->
+<section class="p-breakout">
+  <div class="p-breakout-header">
+    <p class="section-eyebrow">Breakout Films</p>
+    <h2>Three Pillars of West Lincoln</h2>
+    <p>Each film isolates a defining thread of the community — allowing the township to deploy targeted content across channels and audiences.</p>
+  </div>
+  <div class="p-breakout-grid">
+
+    <div class="p-film-card">
+      <div class="p-film-embed">
+        <iframe
+          src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/bf9c6f3584706e2f25957ac55a5bb164/iframe?poster=https://customer-g1088tnr06o82bqj.cloudflarestream.com/bf9c6f3584706e2f25957ac55a5bb164/thumbnails/thumbnail.jpg?time=32s"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+      <div class="p-film-info">
+        <div class="p-film-name">Agriculture</div>
+        <div class="p-film-desc">The land that defines West Lincoln — its farms, harvests, and the families who have worked it for generations.</div>
+      </div>
+    </div>
+
+    <div class="p-film-card">
+      <div class="p-film-embed">
+        <iframe
+          src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/8e0f0924264b36d0120f46fa17cb2b95/iframe?poster=https://customer-g1088tnr06o82bqj.cloudflarestream.com/8e0f0924264b36d0120f46fa17cb2b95/thumbnails/thumbnail.jpg?time=44s"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+      <div class="p-film-info">
+        <div class="p-film-name">Growth</div>
+        <div class="p-film-desc">A township in motion — new development, investment, and the infrastructure supporting a community on the rise.</div>
+      </div>
+    </div>
+
+    <div class="p-film-card">
+      <div class="p-film-embed">
+        <iframe
+          src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/954763c46704b2f3e5126ae19dcbce90/iframe?poster=https://customer-g1088tnr06o82bqj.cloudflarestream.com/954763c46704b2f3e5126ae19dcbce90/thumbnails/thumbnail.jpg?time=42s"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+      <div class="p-film-info">
+        <div class="p-film-name">Community</div>
+        <div class="p-film-desc">The people, events, and shared identity that make West Lincoln more than a place — it's home.</div>
+      </div>
+    </div>
 
   </div>
 </section>
 
-<!-- ALL AREAS -->
-<section class="all-areas">
-  <h2>Also Serving Nearby</h2>
-  <p class="areas-list">
-    <a href="st-catharines.html">St. Catharines</a><span class="areas-sep">·</span>
-    <a href="niagara-falls.html">Niagara Falls</a><span class="areas-sep">·</span>
-    <a href="niagara-on-the-lake.html">Niagara-on-the-Lake</a><span class="areas-sep">·</span>
-    <a href="welland.html">Welland</a><span class="areas-sep">·</span>
-    <a href="thorold.html">Thorold</a><span class="areas-sep">·</span>
-    <a href="pelham.html">Pelham</a><span class="areas-sep">·</span>
-    <a class="current" href="west-lincoln.html">West Lincoln</a><span class="areas-sep">·</span>
-    <a href="lincoln.html">Lincoln</a><span class="areas-sep">·</span>
-    <a href="grimsby.html">Grimsby</a><span class="areas-sep">·</span>
-    <a href="hamilton.html">Hamilton</a><span class="areas-sep">·</span>
-    <a href="toronto.html">Toronto</a><span class="areas-sep">·</span>
-    <a href="gta.html">GTA</a>
-  </p>
-</section>
-
-<!-- CTA -->
-<section class="area-cta">
-  <p class="section-eyebrow">West Lincoln &amp; surrounding area</p>
-  <h2>Let's work together.</h2>
-  <p>Based in St. Catharines, we come to you. Reach out to discuss your project.</p>
-  <div class="area-cta-btns">
-    <a href="../contact.html" class="btn-dark">Start Your Inquiry</a>
-    <a href="../portfolio.html" class="btn-outline">View Our Work</a>
+<!-- BEHIND THE SCENES -->
+<section class="p-bts">
+  <div class="p-bts-header">
+    <div class="p-bts-info">
+      <p class="p-bts-eyebrow">Project Details</p>
+      <h2 class="p-bts-title">How It Was Made</h2>
+      <p class="p-bts-desc">A look at the production process — from early morning drone launches to on-the-ground crew work across the township over multiple shoot days.</p>
+    </div>
+    <div class="p-bts-note">
+      <div class="p-bts-tag">Multi-Day Production</div>
+      <div class="p-bts-tag">Drone · Gimbal · Handheld</div>
+      <div class="p-bts-tag">Captivate Photo+Cinema</div>
+    </div>
+  </div>
+  <div class="p-video-wrap-outer">
+  <div class="p-video-wrap">
+    <iframe
+      src="https://customer-g1088tnr06o82bqj.cloudflarestream.com/4e6ec1d8a6061fc941b0a13e8543dc45/iframe?poster=https://customer-g1088tnr06o82bqj.cloudflarestream.com/4e6ec1d8a6061fc941b0a13e8543dc45/thumbnails/thumbnail.jpg?time=3s"
+      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen loading="lazy">
+    </iframe>
+  </div>
   </div>
 </section>
+
+<!-- BOTTOM NAV -->
+<div class="p-nav-strip">
+  <a href="../portfolio.html" class="p-nav-back">← Back to Portfolio</a>
+  <a href="../contact.html" class="p-nav-cta">Start your project →</a>
+</div>
 
 <footer>
   <div class="footer-top">
     <a href="../index.html" class="footer-logo">Captivate Photo + Cinema</a>
     <div class="footer-badges">
-      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener">
-        <span class="stars">★★★★★</span><span>Google Reviews</span>
-      </a>
+      <a class="badge-google" href="https://www.google.com/search?q=captivate+photo+cinema+st+catharines#lrd=0x89d3498b0d6b4683:0x723216dd03b1b58b,1" target="_blank" rel="noopener"><span class="stars">★★★★★</span><span>Google Reviews</span></a>
       <a class="badge" href="https://www.ccaward.com/award-winners/niagara-region/best-video-production-company/captivate-photocinema/" target="_blank" rel="noopener">Consumer Choice Award</a>
       <a class="badge" href="https://threebestrated.ca/wedding-photographers-in-st-catharines-on" target="_blank" rel="noopener">Three Best Rated 2026</a>
     </div>
   </div>
-  <div class="footer-areas">
-    Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA
-  </div>
+  <div class="footer-areas">Serving: St. Catharines · Niagara Falls · Niagara-on-the-Lake · Welland · Thorold · Port Colborne · Pelham · West Lincoln · Lincoln · Grimsby · Stoney Creek · Hamilton · Ancaster · Burlington · Oakville · Mississauga · Toronto · Brampton · Vaughan · Newmarket · GTA</div>
   <div class="footer-bottom">
-    <span>4 Nihan Drive Unit 4, St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
+    <span>St. Catharines, ON &nbsp;·&nbsp; <a href="tel:2896682780" style="color:inherit;text-decoration:none;">(289) 668-2780</a></span>
     <span>© 2026 Captivate Photo + Cinema. All rights reserved.</span>
   </div>
 </footer>
