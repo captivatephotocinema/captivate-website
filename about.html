@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="robots" content="noindex" /><!-- REMOVE THIS LINE ON LAUNCH DAY -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Adam Stephenson | Captivate Photo+Cinema – St. Catharines, Niagara</title>
   <meta name="description" content="Meet Adam Stephenson – founder of Captivate Photo+Cinema. 20+ years of film, photography, and storytelling across Niagara, Hamilton, and the GTA." />
   <link rel="stylesheet" href="style.css" />
@@ -96,42 +94,51 @@
       color: rgba(255,255,255,0.88);
     }
 
-    /* ── CREDENTIALS ── */
-    .credentials {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+    /* ── LIFELONG PASSION STRIP ── */
+    .passion-section {
       border-top: 0.5px solid var(--light-border);
       border-bottom: 0.5px solid var(--light-border);
+      overflow: hidden;
     }
-
-    .cred {
-      padding: 2.5rem 2rem;
-      border-right: 0.5px solid var(--light-border);
+    .passion-header {
+      padding: 2.5rem 3rem 2rem;
+      border-bottom: 0.5px solid var(--light-border);
     }
-
-    .cred:last-child { border-right: none; }
-
-    .cred-num {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 300;
-      font-size: 44px;
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-
-    .cred-label {
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+    .passion-header h2 { font-size: 26px; margin-bottom: 0.4rem; }
+    .passion-header p {
+      font-size: 13px;
       color: var(--text-secondary);
       font-family: 'Montserrat', sans-serif;
-      margin-bottom: 0.75rem;
-    }
-
-    .cred p {
-      font-size: 12px;
-      color: var(--text-secondary);
       line-height: 1.7;
+      max-width: 560px;
+    }
+    /* Infinite scroll strip */
+    .passion-track-wrap {
+      overflow: hidden;
+      position: relative;
+      padding: 3px 0;
+      background: var(--off-white);
+    }
+    .passion-track {
+      display: flex;
+      gap: 3px;
+      width: max-content;
+      animation: passionScroll 40s linear infinite;
+    }
+    .passion-track:hover { animation-play-state: paused; }
+    .passion-track img {
+      height: 260px;
+      width: auto;
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
+      transition: opacity 0.3s;
+    }
+    .passion-track img:hover { opacity: 0.85; }
+    @keyframes passionScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* ── QUOTE ── */
@@ -146,8 +153,9 @@
     .about-quote-bg {
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center 30%;
+      background-size: 70%;
+      background-position: center center;
+      background-color: #111;
       background-repeat: no-repeat;
       transform: scale(1.03);
     }
@@ -180,9 +188,10 @@
       .about-hero-img { min-height: 320px; }
       .about-hero-text { padding: 2.5rem 1.5rem; border-left: none; border-top: 0.5px solid var(--light-border); }
       .philosophy { padding: 2.5rem 1.5rem; }
-      .credentials { grid-template-columns: 1fr; }
       .cred { border-right: none; border-bottom: 0.5px solid var(--light-border); }
       .cred:last-child { border-bottom: none; }
+      .passion-header { padding: 2rem 1.5rem 1.5rem; }
+      .passion-track img { height: 180px; }
       .about-quote { min-height: 300px; }
       .about-quote-content { padding: 2rem 1.5rem; }
     }
@@ -236,25 +245,48 @@
 
 <!-- PHOTO GRID -->
 
-<!-- CREDENTIALS -->
-<section class="credentials">
-  <div class="cred">
-    <div class="cred-num">20+</div>
-    <div class="cred-label">Years in production</div>
-    <p>From early indie projects to full commercial campaigns — two decades of cinematic experience.</p>
+
+
+<!-- LIFELONG PASSION -->
+<section class="passion-section">
+  <div class="passion-header">
+    <p class="section-eyebrow">A lifelong passion for storytelling</p>
+    <h2>From a JVC Camcorder to a Sony FX3</h2>
+    <p>Twenty years of productions, people, and places — the journey that shaped Captivate into what it is today.</p>
   </div>
-  <div class="cred">
-    <div class="cred-num">200+</div>
-    <div class="cred-label">Weddings captured</div>
-    <p>Hundreds of couples across Southern Ontario trust Captivate to document their most important day.</p>
-  </div>
-  <div class="cred">
-    <div class="cred-num">3×</div>
-    <div class="cred-label">Consumer Choice Award</div>
-    <p>Three consecutive years recognized as the best video production company in the Niagara Region.</p>
+  <div class="passion-track-wrap">
+    <div class="passion-track" id="passionTrack">
+      <img src="images/about/adam-stephenson-young-filmmaker-jvc-camera-early-career.webp" alt="Young Adam with JVC camcorder" loading="lazy" />
+      <img src="images/about/adam-stephenson-arriflex-16mm-film-camera-college-production.webp" alt="Adam with Arriflex 16mm film camera" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-field-shoot-early-film-production.webp" alt="Directing cast on outdoor field shoot" loading="lazy" />
+      <img src="images/about/adam-stephenson-wheelchair-dolly-shot-early-film-production.webp" alt="Wheelchair dolly shot early production" loading="lazy" />
+      <img src="images/about/adam-stephenson-script-review-early-film-production.webp" alt="Script review early film production" loading="lazy" />
+      <img src="images/about/adam-stephenson-cyberpunks-production-script-review.webp" alt="Cyberpunks production" loading="lazy" />
+      <img src="images/about/adam-stephenson-cast-script-reading-film-production.webp" alt="Cast script reading on location" loading="lazy" />
+      <img src="images/about/adam-stephenson-filmmaker-night-shoot-early-career.webp" alt="Night shoot early career" loading="lazy" />
+      <img src="images/about/adam-stephenson-camera-operator-early-production-ontario.webp" alt="Camera operator early production Ontario" loading="lazy" />
+      <img src="images/about/adam-stephenson-deep-river-production-location-shoot.webp" alt="Deep River production location shoot" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-on-set-film-production-ontario.webp" alt="Director on set Ontario" loading="lazy" />
+      <img src="images/about/adam-stephenson-camera-operator-slider-film-production.webp" alt="Camera on slider rig" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-crew-niagara-film-production.webp" alt="Director with crew Niagara" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-fire-truck-night-shoot-niagara.webp" alt="Fire truck night shoot Niagara" loading="lazy" />
+      <img src="images/about/adam-stephenson-young-filmmaker-jvc-camera-early-career.webp" alt="Young Adam with JVC camcorder" loading="lazy" />
+      <img src="images/about/adam-stephenson-arriflex-16mm-film-camera-college-production.webp" alt="Adam with Arriflex 16mm film camera" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-field-shoot-early-film-production.webp" alt="Directing cast on outdoor field shoot" loading="lazy" />
+      <img src="images/about/adam-stephenson-wheelchair-dolly-shot-early-film-production.webp" alt="Wheelchair dolly shot early production" loading="lazy" />
+      <img src="images/about/adam-stephenson-script-review-early-film-production.webp" alt="Script review early film production" loading="lazy" />
+      <img src="images/about/adam-stephenson-cyberpunks-production-script-review.webp" alt="Cyberpunks production" loading="lazy" />
+      <img src="images/about/adam-stephenson-cast-script-reading-film-production.webp" alt="Cast script reading on location" loading="lazy" />
+      <img src="images/about/adam-stephenson-filmmaker-night-shoot-early-career.webp" alt="Night shoot early career" loading="lazy" />
+      <img src="images/about/adam-stephenson-camera-operator-early-production-ontario.webp" alt="Camera operator early production Ontario" loading="lazy" />
+      <img src="images/about/adam-stephenson-deep-river-production-location-shoot.webp" alt="Deep River production location shoot" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-on-set-film-production-ontario.webp" alt="Director on set Ontario" loading="lazy" />
+      <img src="images/about/adam-stephenson-camera-operator-slider-film-production.webp" alt="Camera on slider rig" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-crew-niagara-film-production.webp" alt="Director with crew Niagara" loading="lazy" />
+      <img src="images/about/adam-stephenson-director-fire-truck-night-shoot-niagara.webp" alt="Fire truck night shoot Niagara" loading="lazy" />
+    </div>
   </div>
 </section>
-
 
 <!-- QUOTE / FAMILY PHOTO -->
 <section class="about-quote">
