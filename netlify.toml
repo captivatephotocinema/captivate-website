@@ -1,99 +1,188 @@
+# ============================================================
+# CAPTIVATE PHOTO+CINEMA — NETLIFY REDIRECTS
+# ============================================================
+
+
+# ------------------------------------------------------------
+# OLD WEBWARE PAGES → NEW SITE EQUIVALENTS
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/pages/service-areas"
+  to = "/service-areas"
+  status = 301
+
+[[redirects]]
+  from = "/pages/service-areas/"
+  to = "/service-areas"
+  status = 301
+
+[[redirects]]
+  from = "/pages/services"
+  to = "/services-commercial"
+  status = 301
+
+[[redirects]]
+  from = "/pages/services/"
+  to = "/services-commercial"
+  status = 301
+
+[[redirects]]
+  from = "/pages/services/st-catharines-commercial-photography-videography-services"
+  to = "/services-commercial"
+  status = 301
+
+[[redirects]]
+  from = "/pages/services/st-catharines-drone-services"
+  to = "/services-drone"
+  status = 301
+
+[[redirects]]
+  from = "/pages/about-adam-stephenson-photographer-videographer-st-catharines"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/pages/contact-photographers-videographers-st-catharines-on"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/pages/st-catharines-video-production-testimonials"
+  to = "/testimonials"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/pages/service-areas/photographers-videographers-st-catharines-on"
+  to = "/service-areas"
+  status = 301
+
+[[redirects]]
+  from = "/pages/service-areas/photographers-videographers-mississauga-on"
+  to = "/service-areas"
+  status = 301
+
+[[redirects]]
+  from = "/pages/service-areas/photographers-videographers-burlington-on"
+  to = "/service-areas"
+  status = 301
+
+[[redirects]]
+  from = "/pages/service-areas/*"
+  to = "/service-areas"
+  status = 301
+
+
+# ------------------------------------------------------------
+# NEW SITE CITY PAGES (placeholder → service-areas)
+# ------------------------------------------------------------
+
 [[redirects]]
   from = "/service-areas/st-catharines.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/niagara-falls.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/niagara-on-the-lake.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/welland.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/thorold.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/port-colborne.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/pelham.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/lincoln.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/grimsby.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/stoney-creek.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/hamilton.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/ancaster.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/burlington.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/oakville.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/mississauga.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/toronto.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/brampton.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/vaughan.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/newmarket.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
   from = "/service-areas/gta.html"
-  to = "/service-areas.html"
+  to = "/service-areas"
   status = 301
