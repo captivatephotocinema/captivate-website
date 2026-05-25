@@ -4,16 +4,56 @@
 
 
 # ------------------------------------------------------------
-# OLD WEBWARE PAGES → NEW SITE EQUIVALENTS
+# WILDCARD CATCH-ALLS — must come before specific rules
 # ------------------------------------------------------------
 
 [[redirects]]
-  from = "/pages/service-areas"
+  from = "/pages/service-areas/*"
   to = "/service-areas"
   status = 301
 
 [[redirects]]
-  from = "/pages/service-areas/"
+  from = "/pages/services/*"
+  to = "/services-commercial"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/testimonials/*"
+  to = "/testimonials"
+  status = 301
+
+[[redirects]]
+  from = "/service-areas/*.html"
+  to = "/service-areas"
+  status = 301
+
+[[redirects]]
+  from = "/pages/*"
+  to = "/"
+  status = 301
+
+
+# ------------------------------------------------------------
+# OLD WEBWARE PAGES → NEW SITE EQUIVALENTS (specific)
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/pages/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/service-areas"
   to = "/service-areas"
   status = 301
 
@@ -38,6 +78,16 @@
   status = 301
 
 [[redirects]]
+  from = "/pages/services/st-catharines-aerial-photography-services"
+  to = "/services-drone"
+  status = 301
+
+[[redirects]]
+  from = "/pages/services/st-catharines-commercial-photography-videography-services"
+  to = "/services-commercial"
+  status = 301
+
+[[redirects]]
   from = "/pages/about-adam-stephenson-photographer-videographer-st-catharines"
   to = "/about"
   status = 301
@@ -58,33 +108,13 @@
   status = 301
 
 [[redirects]]
-  from = "/blogs/st-catharines-video-production-company-blog/*"
-  to = "/blog"
-  status = 301
-
-[[redirects]]
-  from = "/pages/service-areas/photographers-videographers-st-catharines-on"
-  to = "/service-areas"
-  status = 301
-
-[[redirects]]
-  from = "/pages/service-areas/photographers-videographers-mississauga-on"
-  to = "/service-areas"
-  status = 301
-
-[[redirects]]
-  from = "/pages/service-areas/photographers-videographers-burlington-on"
-  to = "/service-areas"
-  status = 301
-
-[[redirects]]
-  from = "/pages/service-areas/*"
-  to = "/service-areas"
+  from = "/blogs/testimonials/967883-sara-mcintosh"
+  to = "/testimonials"
   status = 301
 
 
 # ------------------------------------------------------------
-# NEW SITE CITY PAGES (placeholder → service-areas)
+# NEW SITE CITY PAGES (explicit)
 # ------------------------------------------------------------
 
 [[redirects]]
