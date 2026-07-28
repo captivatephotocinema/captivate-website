@@ -46,6 +46,61 @@
 
 
 # ------------------------------------------------------------
+# NEW SITE — .HTML EXTENSION FIXES
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/services-corporate.html"
+  to = "/services-corporate"
+  status = 301
+
+[[redirects]]
+  from = "/services-commercial.html"
+  to = "/services-commercial"
+  status = 301
+
+[[redirects]]
+  from = "/services-wedding.html"
+  to = "/services-wedding"
+  status = 301
+
+[[redirects]]
+  from = "/services-drone.html"
+  to = "/services-drone"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/portfolio"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/testimonials.html"
+  to = "/testimonials"
+  status = 301
+
+[[redirects]]
+  from = "/service-areas.html"
+  to = "/service-areas"
+  status = 301
+
+
+# ------------------------------------------------------------
 # OLD WEBWARE — MAIN PAGES (explicit)
 # ------------------------------------------------------------
 
