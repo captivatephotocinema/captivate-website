@@ -1,10 +1,12 @@
 # ============================================================
 # CAPTIVATE PHOTO+CINEMA — NETLIFY REDIRECTS
+# Comprehensive — built from full Google Search Console export
+# Last updated: 2026-07-28
 # ============================================================
 
 
 # ------------------------------------------------------------
-# WILDCARD CATCH-ALLS
+# WILDCARD CATCH-ALLS (backup — explicit rules below take priority)
 # ------------------------------------------------------------
 
 [[redirects]]
@@ -44,7 +46,7 @@
 
 
 # ------------------------------------------------------------
-# EXPLICIT — OLD WEBWARE PAGES
+# OLD WEBWARE — MAIN PAGES (explicit)
 # ------------------------------------------------------------
 
 [[redirects]]
@@ -53,13 +55,13 @@
   status = 301
 
 [[redirects]]
-  from = "/pages/service-areas"
-  to = "/service-areas"
+  from = "/pages/services"
+  to = "/services-commercial"
   status = 301
 
 [[redirects]]
-  from = "/pages/services"
-  to = "/services-commercial"
+  from = "/pages/service-areas"
+  to = "/service-areas"
   status = 301
 
 [[redirects]]
@@ -77,6 +79,21 @@
   to = "/testimonials"
   status = 301
 
+
+# ------------------------------------------------------------
+# OLD WEBWARE — SERVICE PAGES (explicit)
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/pages/services/st-catharines-corporate-video-production"
+  to = "/services-corporate"
+  status = 301
+
+[[redirects]]
+  from = "/pages/services/st-catharines-commercial-photography-videography-services"
+  to = "/services-commercial"
+  status = 301
+
 [[redirects]]
   from = "/pages/services/st-catharines-drone-services"
   to = "/services-drone"
@@ -87,14 +104,9 @@
   to = "/services-drone"
   status = 301
 
-[[redirects]]
-  from = "/pages/services/st-catharines-commercial-photography-videography-services"
-  to = "/services-commercial"
-  status = 301
-
 
 # ------------------------------------------------------------
-# EXPLICIT — OLD WEBWARE SERVICE AREA CITY PAGES
+# OLD WEBWARE — SERVICE AREA CITY PAGES (explicit)
 # ------------------------------------------------------------
 
 [[redirects]]
@@ -197,33 +209,18 @@
   to = "/service-areas"
   status = 301
 
+[[redirects]]
+  from = "/pages/service-areas/photographers-videographers-gta-on"
+  to = "/service-areas"
+  status = 301
+
 
 # ------------------------------------------------------------
-# EXPLICIT — OLD WEBWARE BLOG POSTS
+# OLD WEBWARE — BLOG POSTS (explicit)
 # ------------------------------------------------------------
 
 [[redirects]]
   from = "/blogs/st-catharines-video-production-company-blog"
-  to = "/blog"
-  status = 301
-
-[[redirects]]
-  from = "/blogs/st-catharines-video-production-company-blog/tagged/niagara-region"
-  to = "/blog"
-  status = 301
-
-[[redirects]]
-  from = "/blogs/st-catharines-video-production-company-blog/tagged/corporate-video"
-  to = "/blog"
-  status = 301
-
-[[redirects]]
-  from = "/blogs/st-catharines-video-production-company-blog/tagged/professional-videography"
-  to = "/blog"
-  status = 301
-
-[[redirects]]
-  from = "/blogs/st-catharines-video-production-company-blog/1272486-great-wolf-lodge-production"
   to = "/blog"
   status = 301
 
@@ -238,7 +235,7 @@
   status = 301
 
 [[redirects]]
-  from = "/blogs/st-catharines-video-production-company-blog/1319776-capturing-corporate-narratives-the-art-of-visual-storytelling-for-modern-brands"
+  from = "/blogs/st-catharines-video-production-company-blog/1319776-capturing-corporate-narratives--the-art-of-visual-storytelling-for-modern-brands"
   to = "/blog"
   status = 301
 
@@ -253,13 +250,78 @@
   status = 301
 
 [[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/1272486-great-wolf-lodge-production"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/1023795-mel-monaco-music-videos---behind-the-scenes"
+  to = "/blog"
+  status = 301
+
+
+# ------------------------------------------------------------
+# OLD WEBWARE — BLOG TAGS (explicit)
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/corporate-video-production"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/corporate-video"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/wedding-video-tips"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/niagara-region"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/professional-videography"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/photographer-selection"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/virtual-tour-video"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/st-catharines-video-production-company-blog/tagged/video-production"
+  to = "/blog"
+  status = 301
+
+
+# ------------------------------------------------------------
+# OLD WEBWARE — TESTIMONIAL PAGES (explicit)
+# ------------------------------------------------------------
+
+[[redirects]]
+  from = "/blogs/testimonials/860331-matthew-blackley"
+  to = "/testimonials"
+  status = 301
+
+[[redirects]]
   from = "/blogs/testimonials/967883-sara-mcintosh"
   to = "/testimonials"
   status = 301
 
 
 # ------------------------------------------------------------
-# EXPLICIT — NEW SITE CITY PAGES
+# NEW SITE — CITY PAGES WITH .HTML EXTENSION (explicit)
 # ------------------------------------------------------------
 
 [[redirects]]
